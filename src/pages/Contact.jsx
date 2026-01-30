@@ -26,8 +26,8 @@ export default function Contact() {
                         <p className="text-[var(--text-1)] mb-4 text-sm">
                             For business inquiries or direct support.
                         </p>
-                        <a href="mailto:support@astraclient.com" className="text-[var(--accent)] font-medium hover:underline">
-                            support@astraclient.com
+                        <a href="mailto:contactastraclient@gmail.com" className="text-[var(--accent)] font-medium hover:underline">
+                            contactastraclient@gmail.com
                         </a>
                     </div>
 
