@@ -80,7 +80,7 @@ Contributions are what make the open-source community such an amazing place to l
 
 ## 📞 Contact
 
-**Viyom Paliwal** - [viyom@astraclient.in](mailto:viyom@astraclient.in)
+**Viyom Paliwal** - [contactastraclient@gmail.com](mailto:contactastraclient@gmail.com)
 
 Project Link: [https://github.com/viyomog/AstraClient-Web](https://github.com/viyomog/AstraClient-Web)
 
