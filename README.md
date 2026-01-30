@@ -1,18 +1,91 @@
-# React + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  <img src="public/logo.ico" alt="AstraClient Logo" width="120" height="120" />
 
-Currently, two official plugins are available:
+  # AstraClient Web
+  
+  **India's First Customer Minecraft Launcher.**
+  
+  Built for performance. Designed for gamers.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+  [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+  [![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 
-## React Compiler
+  [🌐 Live Demo](https://astraclient-two.vercel.app) • [💬 Join Discord](https://discord.gg/dndRMztRAT) • [⬇️ Download](https://astraclient-two.vercel.app/download)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+</div>
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔥 About The Project
 
-# AstraClient-Web
+AstraClient is a next-generation Minecraft launcher designed to deliver the ultimate gaming experience. This repository contains the source code for the official **[AstraClient Website](https://astraclient-two.vercel.app)**.
+
+We focus on sleek design, smooth animations, and providing users with all the information they need to get started with AstraClient.
+
+## ✨ Features
+
+- **🎨 Modern Aesthetic**: Dark mode by default, glassmorphism effects, and polished UI.
+- **⚡ Blazing Fast**: Powered by Vite and React for instant page loads.
+- **📱 Fully Responsive**: Optimized for desktop, tablet, and mobile devices.
+- **🎬 Smooth Animations**: Interactive elements powered by Framer Motion.
+- **📊 Analytics & Insights**: Integrated with Vercel Analytics and Speed Insights.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Deployment**: [Vercel](https://vercel.com/)
+
+## 🚀 Getting Started
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+*   npm
+    ```sh
+    npm install npm@latest -g
+    ```
+
+### Installation
+
+1.  Clone the repo
+    ```sh
+    git clone https://github.com/viyomog/AstraClient-Web.git
+    ```
+2.  Install NPM packages
+    ```sh
+    npm install
+    ```
+3.  Start the development server
+    ```sh
+    npm run dev
+    ```
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+## 📞 Contact
+
+**Viyom Paliwal** - [viyom@astraclient.in](mailto:viyom@astraclient.in)
+
+Project Link: [https://github.com/viyomog/AstraClient-Web](https://github.com/viyomog/AstraClient-Web)
+
+---
+
+<div align="center">
+  <p>Developed with ❤️ by the Astra Team</p>
+</div>
