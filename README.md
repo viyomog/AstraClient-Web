@@ -13,7 +13,7 @@
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
   [![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 
-  [🌐 Live Demo](https://astraclient-two.vercel.app) • [💬 Join Discord](https://discord.gg/dndRMztRAT) • [⬇️ Download](https://astraclient-two.vercel.app/download)
+  [🌐 Live Demo](https://www.astraclient.in) • [💬 Join Discord](https://discord.gg/dndRMztRAT) • [⬇️ Download](https://www.astraclient.in/download)
 
 </div>
 
@@ -21,7 +21,7 @@
 
 ## 🔥 About The Project
 
-AstraClient is a next-generation Minecraft launcher designed to deliver the ultimate gaming experience. This repository contains the source code for the official **[AstraClient Website](https://astraclient-two.vercel.app)**.
+AstraClient is a next-generation Minecraft launcher designed to deliver the ultimate gaming experience. This repository contains the source code for the official **[AstraClient Website](https://www.astraclient.in)**.
 
 We focus on sleek design, smooth animations, and providing users with all the information they need to get started with AstraClient.
 
