@@ -1,8 +1,9 @@
-import { Github, Twitter, Linkedin, Code, Layers, Coffee, Bug, Palette, Figma } from 'lucide-react';
+import { Github, Twitter, Linkedin, Code, Layers, Coffee, Bug, Palette, Figma, Users, MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import viyomPhoto from '../assets/viyomog.jpeg';
 import dikshitPhoto from '../assets/dikshit.jpg';
 import rajdeepPhoto from '../assets/rajdeep.jpg';
+import somayPhoto from '../assets/somay.jpeg';
 
 const teamMembers = [
     {
@@ -47,6 +48,18 @@ const teamMembers = [
         badges: [
             { icon: <Palette size={14} />, text: "UI/UX Design" },
             { icon: <Figma size={14} />, text: "Figma Wizard" }
+        ],
+        socials: [] // Add socials if provided later
+    },
+    {
+        name: "Somay Yadav",
+        role: "Community Manager",
+        title: "COMMUNITY LEAD",
+        description: "The voice of the community. Somay ensures every player is heard and every concern addressed. He bridges the gap between the developers and the users, fostering a welcoming and active environment.",
+        image: somayPhoto,
+        badges: [
+            { icon: <Users size={14} />, text: "Community Lead" },
+            { icon: <MessageCircle size={14} />, text: "Support" }
         ],
         socials: [] // Add socials if provided later
     }
