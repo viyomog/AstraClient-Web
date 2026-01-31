@@ -8,7 +8,7 @@ export default function Terms() {
 
             <h3 className="text-2xl font-bold mt-8 mb-4">1. Licensing</h3>
             <p className="mb-4 text-[var(--text-1)]">
-                AstraClient is an open-source project licensed under the MIT License. You are free to modify and distribute the source code, provided you include the original license.
+                AstraClient is a proprietary software. All rights are reserved. You are not permitted to decompile, reverse engineer, modify, or distribute the source code or binaries without explicit permission.
             </p>
 
             <h3 className="text-2xl font-bold mt-8 mb-4">2. Usage Rights</h3>

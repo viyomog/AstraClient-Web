@@ -24,7 +24,7 @@ export default function Features() {
         {
             icon: <Shield size={32} />,
             title: "Clean & Safe",
-            desc: "No bloatware, no malware, no tracking. AstraClient is 100% open source and community-verified for your peace of mind.",
+            desc: "No bloatware, no malware, no tracking. AstraClient is built with a private, secure codebase verified for your peace of mind.",
             color: "text-green-400"
         },
         {

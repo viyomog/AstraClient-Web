@@ -20,7 +20,7 @@ export default function Home() {
     const features = [
         { icon: <Zap size={24} />, title: "Optimized Performance", desc: "Built for speed with automatic FPS boosting technology." },
         { icon: <Layout size={24} />, title: "Modern UI", desc: "Sleek, dark-themed interface designed for gamers." },
-        { icon: <Shield size={24} />, title: "Secure & Safe", desc: "100% open source and verified secure codebase." }
+        { icon: <Shield size={24} />, title: "Secure & Safe", desc: "Codebase is private but verified secure. All Rights Reserved." }
     ];
 
     return (

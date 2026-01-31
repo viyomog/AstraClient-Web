@@ -65,7 +65,7 @@ export default function DownloadPage() {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto">
-                    <Note icon={<CheckCircle size={20} className="text-green-500" />} title="Safe & Secure" text="Verified by VirusTotal. Open Source code available on GitHub." />
+                    <Note icon={<CheckCircle size={20} className="text-green-500" />} title="Safe & Secure" text="Verified by VirusTotal. Codebase is private. All Rights Reserved." />
                     <Note icon={<AlertTriangle size={20} className="text-yellow-500" />} title="Requirements" text="Requires 64-bit Windows 10 or newer. Java 17+ recommended." />
                 </div>
             </motion.div>

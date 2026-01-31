@@ -6,7 +6,7 @@ export default function FAQ() {
     const questions = [
         {
             q: "Is AstraClient free to use?",
-            a: "Yes! AstraClient is completely free and open-source. There are no hidden fees or subscriptions."
+            a: "Yes! AstraClient is completely free to use. There are no hidden fees or subscriptions."
         },
         {
             q: "Does it support Fabric mods?",
@@ -18,7 +18,7 @@ export default function FAQ() {
         },
         {
             q: "Is it safe? Will I get banned?",
-            a: "AstraClient is safe to use and open source. It complies with most server rules, but always check specific server regulations regarding client modifications."
+            a: "AstraClient is safe to use and verified. It complies with most server rules, but always check specific server regulations regarding client modifications."
         },
         {
             q: "How do I allocate more RAM?",
