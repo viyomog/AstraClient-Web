@@ -97,6 +97,88 @@ const blogContent = {
       </ul>
       <p>While Forge has a massive library of legacy mods, Fabric is the future of modern, high-performance Minecraft modding.</p>
     `
+    },
+    4: {
+        title: "Custom Capes System Explained",
+        date: "February 01, 2026",
+        author: "Viyom Paliwal",
+        readTime: "3 min read",
+        tag: "Features",
+        content: `
+      <h2>Look Good, Play Better</h2>
+      <p>In standard Minecraft, capes are exclusive items reserved for Minecon attendees or Mojang employees. At Astra, we believe customization should be for everyone.</p>
+
+      <h2>How It Works</h2>
+      <p>Our custom cosmetics engine overrides the default player renderer. When you equip a cape in the Astra Launcher, it is instantly visible to:</p>
+      <ul>
+        <li>You (obviously)</li>
+        <li>Other Astra Client users</li>
+        <li>Users of compatible cosmetic mods</li>
+      </ul>
+
+      <h2>Features</h2>
+      <h3>High Definition Support</h3>
+      <p>Unlike standard capes which are pixelated, Astra supports HD textures properly. Upload your high-resolution designs and see every detail in-game.</p>
+
+      <h3>Elytra Compatibility</h3>
+      <p>We've fixed the common bug where capes conflict with Elytras. When you wear an Elytra, your cape texturing is automatically applied to the wings, keeping your style consistent even while flying.</p>
+
+      <h3>Animated Cosmetics (Coming Soon)</h3>
+      <p>We are currently testing support for animated .gif capes and wings. Stay tuned for updates on our Discord!</p>
+    `
+    },
+    5: {
+        title: "What's Next: 2026 Roadmap",
+        date: "February 15, 2026",
+        author: "Viyom Paliwal",
+        readTime: "4 min read",
+        tag: "Roadmap",
+        content: `
+      <h2>The Journey Has Just Begun</h2>
+      <p>Astra Client V1 was just the foundation. We have massive plans for 2026 to revolutionize how you play Minecraft.</p>
+
+      <h2>Upcoming Features</h2>
+
+      <h3>1. FPS Boost 2.0 (Vulkan Support)</h3>
+      <p>We are experimenting with a Vulkan-based rendering pipeline. Early tests show a further 30% performance increase over our current OpenGL setup. This will be a game-changer for integrated graphics users.</p>
+
+      <h3>2. Voice Chat Integration</h3>
+      <p>Why use Discord to talk to people next to you? We are integrating Proximity Voice Chat directly into the client. No extra mod installation needed—just join a server and start talking.</p>
+
+      <h3>3. The Astra Partner Program</h3>
+      <p>We want to support creators. Soon, streamers and YouTubers will be able to apply for the Partner Program to get exclusive cosmetics, a verified badge, and revenue sharing opportunities.</p>
+
+      <h3>4. Astra Store</h3>
+      <p>A marketplace for premium capes, wings, and hats created by the community. Artists will be able to sell their designs directly to players.</p>
+    `
+    },
+    6: {
+        title: "Our Dream",
+        date: "February 20, 2026",
+        author: "Viyom Paliwal",
+        readTime: "5 min read",
+        tag: "Community",
+        content: `
+      <h2>To The Indian Gaming Community,</h2>
+      <p>We started Astra Client with a simple frustration: Why does every good Minecraft client require a high-end PC? Why are Indian gamers with budget laptops left behind?</p>
+
+      <h2>Breaking the Hardware Barrier</h2>
+      <p>Our dream is simple: <strong>Minecraft should be playable for everyone.</strong> It shouldn't matter if you have an RTX 4090 or an integrated Intel HD card. You deserve smooth frames, beautiful graphics, and a fair competitive experience.</p>
+
+      <h2>A Unified Platform</h2>
+      <p>We want to build more than just a launcher. We are building a home for Indian Minecrafters. A place where:</p>
+      <ul>
+        <li>PvP players can find competitive matches.</li>
+        <li>Survival players can find beautiful, optimized SMPs.</li>
+        <li>Creators can find an audience.</li>
+      </ul>
+
+      <h2>This Is Your Client</h2>
+      <p>Astra is closed source to protect our unique technology, but our ears are open. Every feature we add comes from your suggestions. We are building this <em>with</em> you, not just for you.</p>
+
+      <p>Thank you for trusting us. Let's make 2026 the year of Astra.</p>
+      <p><strong>- Viyom & The Astra Team</strong></p>
+    `
     }
 };
 

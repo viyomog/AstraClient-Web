@@ -35,6 +35,22 @@ export default function Blog() {
             date: "Feb 01, 2026",
             tag: "Features",
             color: "bg-yellow-500"
+        },
+        {
+            id: 5,
+            title: "What's Next: 2026 Roadmap",
+            preview: "FPS Boost 2.0, Voice Chat, and more. A sneak peek into the future of Astra Client.",
+            date: "Feb 15, 2026",
+            tag: "Roadmap",
+            color: "bg-red-500"
+        },
+        {
+            id: 6,
+            title: "Our Dream",
+            preview: "A letter to the Indian Gaming Community. Why we started, where we are going, and why you matter.",
+            date: "Feb 20, 2026",
+            tag: "Community",
+            color: "bg-orange-500"
         }
     ];
 
