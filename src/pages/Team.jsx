@@ -26,7 +26,7 @@ const teamMembers = [
         name: "Dikshit Kumar",
         role: "Software Tester",
         title: "QUALITY ASSURANCE",
-        description: "Dikshit ensures meaningful experiences by rigorously testing every feature. His attention to detail ensures AstraClient is bug-free and smooth for every user.",
+        description: "The firewall against bugs. Dikshit pushes AstraClient to its limits, ensuring every release is stable, optimized, and ready for the competitive gaming stage. His rigorous testing guarantees a flawless experience.",
         image: dikshitPhoto,
         badges: [
             { icon: <Bug size={14} />, text: "Bug Hunter" },
@@ -42,7 +42,7 @@ const teamMembers = [
         name: "Rajdeep Singh",
         role: "UI Designer",
         title: "CREATIVE LEAD",
-        description: "Rajdeep crafts the visual identity of AstraClient. From the sleek interface to the engaging website visuals, he ensures everything looks premium and intuitive.",
+        description: "The architect of aesthetics. Rajdeep blends form and function to create AstraClient's signature visual identity. From pixel-perfect layouts to fluid animations, he ensures the launcher feels as premium as it performs.",
         image: rajdeepPhoto,
         badges: [
             { icon: <Palette size={14} />, text: "UI/UX Design" },
