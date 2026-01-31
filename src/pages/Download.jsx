@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Download, CheckCircle, AlertTriangle } from 'lucide-react';
 
 export default function DownloadPage() {
+    const [downloadUrl, setDownloadUrl] = useState('');
     const [version, setVersion] = useState('Checking...');
     const [loading, setLoading] = useState(true);
 
@@ -10,7 +11,11 @@ export default function DownloadPage() {
         fetch('https://api.github.com/repos/viyomog/AstraClient/releases/latest')
             .then(res => res.json())
             .then(data => {
-                if (data.tag_name) {
+                if (data.assets && data.assets.length > 0) {
+                    const exeAsset = data.assets.find(a => a.name.endsWith('.exe'));
+                    if (exeAsset) {
+                        setDownloadUrl(exeAsset.browser_download_url);
+                    }
                     setVersion(data.tag_name);
                 }
                 setLoading(false);
@@ -40,9 +45,7 @@ export default function DownloadPage() {
                         <p className="text-[var(--text-1)] mb-8 text-sm">Compatible with Minecraft Java Edition</p>
 
                         <a
-                            href="https://github.com/viyomog/AstraClient/releases"
-                            target="_blank"
-                            rel="noreferrer"
+                            href={downloadUrl || "https://github.com/viyomog/AstraClient/releases"}
                             className={`
                 flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-xl shadow-lg transition-all transform hover:-translate-y-1
                 ${loading
@@ -52,7 +55,7 @@ export default function DownloadPage() {
               `}
                         >
                             <Download size={28} />
-                            {loading ? 'Checking Version...' : 'Download from GitHub'}
+                            {loading ? 'Fetching Build...' : 'Download Installer (.exe)'}
                         </a>
 
                         <p className="mt-4 text-xs text-[var(--text-1)] opacity-60">
