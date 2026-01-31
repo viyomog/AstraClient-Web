@@ -32,7 +32,7 @@ export default function Blog() {
             id: 4,
             title: "Custom Capes System Explained",
             preview: "Ever wanted unique cosmetics? Here's how our cape system integrates seamlessly with your account.",
-            date: "Feb 01, 2026",
+            date: "Jan 25, 2026",
             tag: "Features",
             color: "bg-yellow-500"
         },
@@ -40,7 +40,7 @@ export default function Blog() {
             id: 5,
             title: "What's Next: 2026 Roadmap",
             preview: "FPS Boost 2.0, Voice Chat, and more. A sneak peek into the future of Astra Client.",
-            date: "Feb 15, 2026",
+            date: "Jan 28, 2026",
             tag: "Roadmap",
             color: "bg-red-500"
         },
@@ -48,7 +48,7 @@ export default function Blog() {
             id: 6,
             title: "Our Dream",
             preview: "A letter to the Indian Gaming Community. Why we started, where we are going, and why you matter.",
-            date: "Feb 20, 2026",
+            date: "Jan 30, 2026",
             tag: "Community",
             color: "bg-orange-500"
         }

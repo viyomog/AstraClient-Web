@@ -100,7 +100,7 @@ const blogContent = {
     },
     4: {
         title: "Custom Capes System Explained",
-        date: "February 01, 2026",
+        date: "January 25, 2026",
         author: "Viyom Paliwal",
         readTime: "3 min read",
         tag: "Features",
@@ -129,7 +129,7 @@ const blogContent = {
     },
     5: {
         title: "What's Next: 2026 Roadmap",
-        date: "February 15, 2026",
+        date: "January 28, 2026",
         author: "Viyom Paliwal",
         readTime: "4 min read",
         tag: "Roadmap",
@@ -154,7 +154,7 @@ const blogContent = {
     },
     6: {
         title: "Our Dream",
-        date: "February 20, 2026",
+        date: "January 30, 2026",
         author: "Viyom Paliwal",
         readTime: "5 min read",
         tag: "Community",
