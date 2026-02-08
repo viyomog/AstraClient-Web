@@ -10,6 +10,7 @@ import Team from './pages/Team';
 import Download from './pages/Download';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import AdminStats from './pages/AdminStats';
 
 import Features from './pages/Features';
 import Blog from './pages/Blog';
@@ -31,6 +32,7 @@ function App() {
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/team" element={<Team />} />
             <Route path="/download" element={<Download />} />
+            <Route path="/download/admin/count" element={<AdminStats />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />

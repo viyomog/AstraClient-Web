@@ -8,15 +8,31 @@ export default function DownloadPage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://api.github.com/repos/viyomog/AstraClient/releases/latest')
+        fetch('https://api.github.com/repos/viyomog/AstraClient/releases')
             .then(res => res.json())
             .then(data => {
-                if (data.assets && data.assets.length > 0) {
-                    const exeAsset = data.assets.find(a => a.name.endsWith('.exe'));
-                    if (exeAsset) {
-                        setDownloadUrl(exeAsset.browser_download_url);
+                if (data && data.length > 0) {
+                    const latest = data[0];
+                    if (latest.assets && latest.assets.length > 0) {
+                        const exeAsset = latest.assets.find(a => a.name.endsWith('.exe'));
+                        if (exeAsset) {
+                            setDownloadUrl(exeAsset.browser_download_url);
+                        }
+                        setVersion(latest.tag_name);
                     }
-                    setVersion(data.tag_name);
+
+                    // Log download counts to console for the user to check privately
+                    console.group('--- Astra Client Download Stats ---');
+                    let totalDownloads = 0;
+                    data.forEach(release => {
+                        console.log(`Release: ${release.tag_name}`);
+                        release.assets.forEach(asset => {
+                            console.log(`  - ${asset.name}: ${asset.download_count} downloads`);
+                            totalDownloads += asset.download_count;
+                        });
+                    });
+                    console.log(`TOTAL DOWNLOADS: ${totalDownloads}`);
+                    console.groupEnd();
                 }
                 setLoading(false);
             })
