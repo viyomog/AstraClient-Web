@@ -51,6 +51,38 @@ export default function Blog() {
             date: "Jan 30, 2026",
             tag: "Community",
             color: "bg-orange-500"
+        },
+        {
+            id: 7,
+            title: "The Hidden Cost of Free Clients",
+            preview: "If you aren't paying for the product, you might be the product. How Astra Client protects your data in an era of spyware.",
+            date: "Feb 09, 2026",
+            tag: "Security",
+            color: "bg-pink-500"
+        },
+        {
+            id: 8,
+            title: "Community Spotlight: January 2026",
+            preview: "Highlighting the craziest builds, funniest clips, and best fan art from our Discord community this month.",
+            date: "Feb 02, 2026",
+            tag: "Community",
+            color: "bg-orange-500"
+        },
+        {
+            id: 9,
+            title: "Patch Notes v1.2: Squashing Bugs",
+            preview: "We've fixed the random crash on startup, improved font rendering, and polished the settings UI.",
+            date: "Feb 05, 2026",
+            tag: "Update",
+            color: "bg-blue-500"
+        },
+        {
+            id: 10,
+            title: "Five Settings to Boost FPS Now",
+            preview: "Struggling with lag? Here are the 5 most impactful video settings you need to change in Astra Client right now.",
+            date: "Feb 08, 2026",
+            tag: "Guide",
+            color: "bg-green-500"
         }
     ];
 

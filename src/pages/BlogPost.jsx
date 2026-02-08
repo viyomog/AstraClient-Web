@@ -1,6 +1,10 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, Calendar, User } from 'lucide-react';
+import viyomPhoto from '../assets/viyomog.jpeg';
+import rajdeepPhoto from '../assets/rajdeep.jpg';
+import somayPhoto from '../assets/somay.jpeg';
+import dikshitPhoto from '../assets/dikshit.jpg';
 
 const blogContent = {
     1: {
@@ -44,7 +48,7 @@ const blogContent = {
     2: {
         title: "Why We Built a Custom UI",
         date: "January 03, 2026",
-        author: "Viyom Paliwal",
+        author: "Rajdeep Singh",
         readTime: "4 min read",
         tag: "Design",
         content: `
@@ -101,7 +105,7 @@ const blogContent = {
     4: {
         title: "Custom Capes System Explained",
         date: "January 25, 2026",
-        author: "Viyom Paliwal",
+        author: "Rajdeep Singh",
         readTime: "3 min read",
         tag: "Features",
         content: `
@@ -179,6 +183,120 @@ const blogContent = {
       <p>Thank you for trusting us. Let's make 2026 the year of Astra.</p>
       <p><strong>- Viyom & The Astra Team</strong></p>
     `
+    },
+    7: {
+        title: "The Hidden Cost of Free Clients",
+        date: "February 09, 2026",
+        author: "Viyom Paliwal",
+        readTime: "7 min read",
+        tag: "Security",
+        content: `
+      <h2>If You Aren't Paying, You Are The Product</h2>
+      <p>The Minecraft client market is flooded with free options. Many of them promise better FPS, cool cosmetics, and powerful mods. But have you ever asked yourself: <em>How do they make money?</em></p>
+      <p>Hosting servers costs money. Developing software takes time. If a client is free and has no premium features, cosmetics store, or partner program, they are likely monitizing <strong>you</strong>.</p>
+
+      <h2>The Data Collection Problem</h2>
+      <p>We have analyzed several popular "free" clients and found alarming behavior:</p>
+      <ul>
+        <li><strong>Session Stealing:</strong> Some clients log your session ID, allowing them to log into your account without your password.</li>
+        <li><strong>Hardware Scanning:</strong> Collecting your HWID, IP address, and installed programs to build a profile on you.</li>
+        <li><strong>Background Mining:</strong> Using your GPU to mine crypto while you play (often disguised as "high CPU usage").</li>
+      </ul>
+
+      <h2>How Astra Protects You</h2>
+      <p>We built Astra Client with a privacy-first architecture.</p>
+
+      <h3>1. Zero Data Collection</h3>
+      <p>We do not collect personal data. Your session tokens never leave your computer. We use the official Microsoft authentication flow, so we never see your password.</p>
+
+      <h3>2. Transparent Monetization</h3>
+      <p>We are honest about how we make money. We sell premium cosmetics and have a partner program. That's it. We don't need to sell your data because our business model is sustainable without it.</p>
+
+      <h3>3. Open Standards</h3>
+      <p>While our core optimization engine is closed source, we use open-source libraries like Fabric and Sodium. This ensures that the base of our client is built on trusted, community-verified code.</p>
+
+      <h2>Stay Safe</h2>
+      <p>Be careful what you install. Verify the developers. Check the community trust. Your account security is worth more than a few extra frames.</p>
+    `
+    },
+    8: {
+        title: "Community Spotlight: January 2026",
+        date: "February 02, 2026",
+        author: "Somay Yadav",
+        readTime: "4 min read",
+        tag: "Community",
+        content: `
+      <h2>What a Month!</h2>
+      <p>January has been incredible for the Astra community. We've seen some mind-blowing builds, hilarious clips, and artwork that belongs in a museum. Here are our top picks.</p>
+
+      <h2>Build of the Month</h2>
+      <p><strong>Builder:</strong> BuilderBob_99</p>
+      <p>This cyberpunk city build took over 100 hours, and it shows. The use of neon blocks combined with our custom shaders makes it pop.</p>
+      
+      <h2>Clip of the Month</h2>
+      <p><strong>Player:</strong> PvP_God_2000</p>
+      <p>A 1v4 clutch in Bedwars? With 1 heart left? Absolutely insane. Check out the clip on our Discord in the #highlights channel.</p>
+
+      <h2>Fan Art</h2>
+      <p>A huge shoutout to <strong>ArtisticCreeper</strong> for the amazing drawing of the Astra mascot. We might just make it an official sticker!</p>
+
+      <p>Want to be featured next month? Join our Discord and post your creations in #community-showcase!</p>
+    `
+    },
+    9: {
+        title: "Patch Notes v1.2: Squashing Bugs",
+        date: "February 05, 2026",
+        author: "Dikshit Kumar",
+        readTime: "3 min read",
+        tag: "Update",
+        content: `
+      <h2>Quick Fix Update</h2>
+      <p>We heard your feedback. Some users were experiencing crashes on startup with Intel integrated graphics. This patch addresses that and more.</p>
+
+      <h2>Changelog</h2>
+      <ul>
+        <li><strong>Fixed:</strong> Crash on startup for Intel UHD 630 users.</li>
+        <li><strong>Fixed:</strong> Cape textures sometimes loading as black squares.</li>
+        <li><strong>Improved:</strong> Font rendering is now sharper on 1080p displays.</li>
+        <li><strong>Polished:</strong> The settings menu now has smoother transition animations.</li>
+        <li><strong>Added:</strong> New "Eco Mode" in launcher to reduce CPU usage when idle.</li>
+      </ul>
+
+      <p>The update should download automatically when you restart the launcher. Happy gaming!</p>
+    `
+    },
+    10: {
+        title: "Five Settings to Boost FPS Now",
+        date: "February 08, 2026",
+        author: "Viyom Paliwal",
+        readTime: "6 min read",
+        tag: "Guide",
+        content: `
+      <h2>Lagging? Try This.</h2>
+      <p>Even with Astra Client's optimizations, sometimes you need to tweak a few settings to get the best performance on older hardware. Here are the top 5 settings to change.</p>
+
+      <h3>1. Render Distance</h3>
+      <p><strong>Recommendation:</strong> 8-10 chunks.</p>
+      <p>This has the biggest impact on FPS. Dropping from 16 to 10 can double your frame rate.</p>
+
+      <h3>2. Simulation Distance</h3>
+      <p><strong>Recommendation:</strong> 5 chunks.</p>
+      <p>This controls how far away mobs and redstone are active. Lowering this reduces CPU load significantly.</p>
+
+      <h3>3. Graphics</h3>
+      <p><strong>Recommendation:</strong> Fast.</p>
+      <p>This simplifies leaf textures (removes transparency) and disables some minor visual effects.</p>
+
+      <h3>4. Smooth Lighting</h3>
+      <p><strong>Recommendation:</strong> Minimum or Off.</p>
+      <p>Calculates lighting shadows. Turning this off makes the game look "flatter" but gives a massive FPS boost.</p>
+
+      <h3>5. Entity Shadows</h3>
+      <p><strong>Recommendation:</strong> OFF.</p>
+      <p>The little round shadow under mobs/players actually takes a surprising amount of processing power to render. Turn it off.</p>
+
+      <p>Applying these settings should help you get that silky smooth 60+ FPS experience!</p>
+    `
     }
 };
 
@@ -221,12 +339,23 @@ export default function BlogPost() {
                     <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">{post.title}</h1>
 
                     <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-[var(--bg-2)] flex items-center justify-center border border-[rgba(255,255,255,0.1)]">
-                            <User size={20} className="text-[var(--text-1)]" />
+                        <div className="w-10 h-10 rounded-full bg-[var(--bg-2)] flex items-center justify-center border border-[rgba(255,255,255,0.1)] overflow-hidden">
+                            {post.author === "Viyom Paliwal" && <img src={viyomPhoto} alt={post.author} className="w-full h-full object-cover" />}
+                            {post.author === "Rajdeep Singh" && <img src={rajdeepPhoto} alt={post.author} className="w-full h-full object-cover" />}
+                            {post.author === "Somay Yadav" && <img src={somayPhoto} alt={post.author} className="w-full h-full object-cover" />}
+                            {post.author === "Dikshit Kumar" && <img src={dikshitPhoto} alt={post.author} className="w-full h-full object-cover" />}
+                            {!["Viyom Paliwal", "Rajdeep Singh", "Somay Yadav", "Dikshit Kumar"].includes(post.author) && (
+                                <User size={20} className="text-[var(--text-1)]" />
+                            )}
                         </div>
                         <div>
                             <p className="font-bold text-white">{post.author}</p>
-                            <p className="text-xs text-[var(--text-1)]">Lead Developer</p>
+                            <p className="text-xs text-[var(--text-1)]">
+                                {post.author === "Viyom Paliwal" && "Founder & Lead Developer"}
+                                {post.author === "Rajdeep Singh" && "UI Designer"}
+                                {post.author === "Somay Yadav" && "Community Manager"}
+                                {post.author === "Dikshit Kumar" && "QA Tester"}
+                            </p>
                         </div>
                     </div>
                 </header>
