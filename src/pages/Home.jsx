@@ -59,7 +59,7 @@ export default function Home() {
                         </Link>
 
                         <a
-                            href="https://discord.gg/dndRMztRAT"
+                            href="https://discord.gg/5AEp4bgund"
                             target="_blank"
                             rel="noreferrer"
                             className="flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg bg-[var(--bg-2)] border border-[rgba(255,255,255,0.1)] hover:bg-[var(--bg-1)] transition-all"

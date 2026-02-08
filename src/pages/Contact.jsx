@@ -40,7 +40,7 @@ export default function Contact() {
                             Join our active community for instant help and updates.
                         </p>
                         <a
-                            href="https://discord.gg/dndRMztRAT"
+                            href="https://discord.gg/5AEp4bgund"
                             target="_blank"
                             rel="noreferrer"
                             className="inline-flex items-center gap-2 px-4 py-2 bg-[#5865F2] rounded-lg text-white font-bold text-sm hover:bg-[#4752c4] transition-colors"

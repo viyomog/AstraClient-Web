@@ -17,7 +17,7 @@ export default function Footer() {
                 <div>
                     <h4 className="font-bold mb-4 text-white">Community</h4>
                     <ul className="space-y-2 text-sm text-[var(--text-1)]">
-                        <li><a href="https://discord.gg/dndRMztRAT" className="hover:text-[var(--primary)] transition-colors">Discord Server</a></li>
+                        <li><a href="https://discord.gg/5AEp4bgund" className="hover:text-[var(--primary)] transition-colors">Discord Server</a></li>
                         <li><a href="https://twitter.com/ViyomOg" className="hover:text-[var(--primary)] transition-colors">Twitter (X)</a></li>
                         <li><a href="https://www.youtube.com/@viyom_og" className="hover:text-[var(--primary)] transition-colors">YouTube Channel</a></li>
                     </ul>
