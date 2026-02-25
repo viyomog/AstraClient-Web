@@ -83,6 +83,38 @@ export default function Blog() {
             date: "Feb 08, 2026",
             tag: "Guide",
             color: "bg-green-500"
+        },
+        {
+            id: 11,
+            title: "Astra Client v1.3: The Valentine's Update",
+            preview: "New pink-themed UI options, heart particle effects, and bug fixes for the cosmetic engine.",
+            date: "Feb 12, 2026",
+            tag: "Update",
+            color: "bg-pink-500"
+        },
+        {
+            id: 12,
+            title: "Mastering the Astra HUD: Layout Tips",
+            preview: "How to organize your HUD elements for maximum visibility and aesthetic appeal.",
+            date: "Feb 18, 2026",
+            tag: "Guide",
+            color: "bg-blue-500"
+        },
+        {
+            id: 13,
+            title: "Community Spotlight: February 2026 Part 1",
+            preview: "Showcasing the best community servers and events from the first half of February.",
+            date: "Feb 22, 2026",
+            tag: "Community",
+            color: "bg-orange-500"
+        },
+        {
+            id: 14,
+            title: "The Future of Minecraft Clients: Vulkan & Beyond",
+            preview: "A deep dive into the experimental Vulkan renderer and what it means for Minecraft's future performance.",
+            date: "Feb 25, 2026",
+            tag: "Technical",
+            color: "bg-purple-500"
         }
     ];
 

@@ -7,13 +7,13 @@ import somayPhoto from '../assets/somay.jpeg';
 import dikshitPhoto from '../assets/dikshit.jpg';
 
 const blogContent = {
-    1: {
-        title: "How Astra Client Boosts Your FPS",
-        date: "January 12, 2026",
-        author: "Viyom Paliwal",
-        readTime: "5 min read",
-        tag: "Performance",
-        content: `
+  1: {
+    title: "How Astra Client Boosts Your FPS",
+    date: "January 12, 2026",
+    author: "Viyom Paliwal",
+    readTime: "5 min read",
+    tag: "Performance",
+    content: `
       <h2>The Performance Problem</h2>
       <p>Minecraft is written in Java, a language that relies heavily on a virtual machine (JVM). While flexible, the default game engine is notoriously unoptimized for modern hardware. It generates garbage data frequently, leading to stuttering (GC lag), and often fails to utilize multi-core processors effectively.</p>
 
@@ -44,14 +44,14 @@ const blogContent = {
       </ul>
       <p>The difference is night and day. By stripping away bloat and focusing on efficient rendering, Astra Client delivers the competitive edge you need.</p>
     `
-    },
-    2: {
-        title: "Why We Built a Custom UI",
-        date: "January 03, 2026",
-        author: "Rajdeep Singh",
-        readTime: "4 min read",
-        tag: "Design",
-        content: `
+  },
+  2: {
+    title: "Why We Built a Custom UI",
+    date: "January 03, 2026",
+    author: "Rajdeep Singh",
+    readTime: "4 min read",
+    tag: "Design",
+    content: `
       <h2>Beyond the Dirt Background</h2>
       <p>For over a decade, Minecraft players have stared at the same grey buttons and dirt background. While nostalgic, it's clunky, unintuitive, and frankly, ugly by modern standards.</p>
 
@@ -70,14 +70,14 @@ const blogContent = {
       <h2>Technical Implementation</h2>
       <p>We render our UI using a high-performance web-based layer integrated directly into the game window. This allows us to use modern animation libraries (like Framer Motion) that simply aren't possible with standard Java Swing or Minecraft's raw GUI rendering.</p>
     `
-    },
-    3: {
-        title: "Fabric vs Forge: Our Choice",
-        date: "December 25, 2025",
-        author: "Viyom Paliwal",
-        readTime: "6 min read",
-        tag: "Technical",
-        content: `
+  },
+  3: {
+    title: "Fabric vs Forge: Our Choice",
+    date: "December 25, 2025",
+    author: "Viyom Paliwal",
+    readTime: "6 min read",
+    tag: "Technical",
+    content: `
       <h2>The Mod Loader War</h2>
       <p>The Minecraft community has long been divided between Forge and Fabric. Both have their merits, but for a performance-focused client like Astra, the choice was clear.</p>
 
@@ -101,14 +101,14 @@ const blogContent = {
       </ul>
       <p>While Forge has a massive library of legacy mods, Fabric is the future of modern, high-performance Minecraft modding.</p>
     `
-    },
-    4: {
-        title: "Custom Capes System Explained",
-        date: "January 25, 2026",
-        author: "Rajdeep Singh",
-        readTime: "3 min read",
-        tag: "Features",
-        content: `
+  },
+  4: {
+    title: "Custom Capes System Explained",
+    date: "January 25, 2026",
+    author: "Rajdeep Singh",
+    readTime: "3 min read",
+    tag: "Features",
+    content: `
       <h2>Look Good, Play Better</h2>
       <p>In standard Minecraft, capes are exclusive items reserved for Minecon attendees or Mojang employees. At Astra, we believe customization should be for everyone.</p>
 
@@ -130,14 +130,14 @@ const blogContent = {
       <h3>Animated Cosmetics (Coming Soon)</h3>
       <p>We are currently testing support for animated .gif capes and wings. Stay tuned for updates on our Discord!</p>
     `
-    },
-    5: {
-        title: "What's Next: 2026 Roadmap",
-        date: "January 28, 2026",
-        author: "Viyom Paliwal",
-        readTime: "4 min read",
-        tag: "Roadmap",
-        content: `
+  },
+  5: {
+    title: "What's Next: 2026 Roadmap",
+    date: "January 28, 2026",
+    author: "Viyom Paliwal",
+    readTime: "4 min read",
+    tag: "Roadmap",
+    content: `
       <h2>The Journey Has Just Begun</h2>
       <p>Astra Client V1 was just the foundation. We have massive plans for 2026 to revolutionize how you play Minecraft.</p>
 
@@ -155,14 +155,14 @@ const blogContent = {
       <h3>4. Astra Store</h3>
       <p>A marketplace for premium capes, wings, and hats created by the community. Artists will be able to sell their designs directly to players.</p>
     `
-    },
-    6: {
-        title: "Our Dream",
-        date: "January 30, 2026",
-        author: "Viyom Paliwal",
-        readTime: "5 min read",
-        tag: "Community",
-        content: `
+  },
+  6: {
+    title: "Our Dream",
+    date: "January 30, 2026",
+    author: "Viyom Paliwal",
+    readTime: "5 min read",
+    tag: "Community",
+    content: `
       <h2>To The Indian Gaming Community,</h2>
       <p>We started Astra Client with a simple frustration: Why does every good Minecraft client require a high-end PC? Why are Indian gamers with budget laptops left behind?</p>
 
@@ -183,14 +183,14 @@ const blogContent = {
       <p>Thank you for trusting us. Let's make 2026 the year of Astra.</p>
       <p><strong>- Viyom & The Astra Team</strong></p>
     `
-    },
-    7: {
-        title: "The Hidden Cost of Free Clients",
-        date: "February 09, 2026",
-        author: "Viyom Paliwal",
-        readTime: "7 min read",
-        tag: "Security",
-        content: `
+  },
+  7: {
+    title: "The Hidden Cost of Free Clients",
+    date: "February 09, 2026",
+    author: "Viyom Paliwal",
+    readTime: "7 min read",
+    tag: "Security",
+    content: `
       <h2>If You Aren't Paying, You Are The Product</h2>
       <p>The Minecraft client market is flooded with free options. Many of them promise better FPS, cool cosmetics, and powerful mods. But have you ever asked yourself: <em>How do they make money?</em></p>
       <p>Hosting servers costs money. Developing software takes time. If a client is free and has no premium features, cosmetics store, or partner program, they are likely monitizing <strong>you</strong>.</p>
@@ -218,14 +218,14 @@ const blogContent = {
       <h2>Stay Safe</h2>
       <p>Be careful what you install. Verify the developers. Check the community trust. Your account security is worth more than a few extra frames.</p>
     `
-    },
-    8: {
-        title: "Community Spotlight: January 2026",
-        date: "February 02, 2026",
-        author: "Somay Yadav",
-        readTime: "4 min read",
-        tag: "Community",
-        content: `
+  },
+  8: {
+    title: "Community Spotlight: January 2026",
+    date: "February 02, 2026",
+    author: "Somay Yadav",
+    readTime: "4 min read",
+    tag: "Community",
+    content: `
       <h2>What a Month!</h2>
       <p>January has been incredible for the Astra community. We've seen some mind-blowing builds, hilarious clips, and artwork that belongs in a museum. Here are our top picks.</p>
 
@@ -242,14 +242,14 @@ const blogContent = {
 
       <p>Want to be featured next month? Join our Discord and post your creations in #community-showcase!</p>
     `
-    },
-    9: {
-        title: "Patch Notes v1.2: Squashing Bugs",
-        date: "February 05, 2026",
-        author: "Dikshit Kumar",
-        readTime: "3 min read",
-        tag: "Update",
-        content: `
+  },
+  9: {
+    title: "Patch Notes v1.2: Squashing Bugs",
+    date: "February 05, 2026",
+    author: "Dikshit Kumar",
+    readTime: "3 min read",
+    tag: "Update",
+    content: `
       <h2>Quick Fix Update</h2>
       <p>We heard your feedback. Some users were experiencing crashes on startup with Intel integrated graphics. This patch addresses that and more.</p>
 
@@ -264,14 +264,14 @@ const blogContent = {
 
       <p>The update should download automatically when you restart the launcher. Happy gaming!</p>
     `
-    },
-    10: {
-        title: "Five Settings to Boost FPS Now",
-        date: "February 08, 2026",
-        author: "Viyom Paliwal",
-        readTime: "6 min read",
-        tag: "Guide",
-        content: `
+  },
+  10: {
+    title: "Five Settings to Boost FPS Now",
+    date: "February 08, 2026",
+    author: "Viyom Paliwal",
+    readTime: "6 min read",
+    tag: "Guide",
+    content: `
       <h2>Lagging? Try This.</h2>
       <p>Even with Astra Client's optimizations, sometimes you need to tweak a few settings to get the best performance on older hardware. Here are the top 5 settings to change.</p>
 
@@ -297,80 +297,181 @@ const blogContent = {
 
       <p>Applying these settings should help you get that silky smooth 60+ FPS experience!</p>
     `
-    }
+  },
+  11: {
+    title: "Astra Client v1.3: The Valentine's Update",
+    date: "February 12, 2026",
+    author: "Dikshit Kumar",
+    readTime: "4 min read",
+    tag: "Update",
+    content: `
+      <h2>Love is in the (Astra) Air</h2>
+      <p>We're excited to announce the release of Astra Client v1.3! This update focuses on personalization and minor bug fixes reported by our amazing community.</p>
+
+      <h2>What's New?</h2>
+      
+      <h3>1. Valentine's Cosmetics</h3>
+      <p>Looking to share the love? We've added exclusive heart-themed particle effects and a limited-edition "Sweetheart" cape pattern, available for free for all Astra users until the end of February!</p>
+
+      <h3>2. Pink UI Theme</h3>
+      <p>By popular demand, we've added a new "Pastel Rose" theme to the launcher and in-game HUD. You can toggle this in the Astra Global Settings under the 'Appearance' tab.</p>
+
+      <h2>Technical Fixes</h2>
+      <ul>
+        <li><strong>Fixed:</strong> A memory leak associated with the custom HUD editor.</li>
+        <li><strong>Fixed:</strong> Issues with shader compatibility on older NVIDIA GT series cards.</li>
+        <li><strong>Improved:</strong> Cosmetic rendering performance inside high-density player clusters (Lobbies).</li>
+      </ul>
+
+      <p>As always, the update will apply automatically. Let us know what you think on our Discord!</p>
+    `
+  },
+  12: {
+    title: "Mastering the Astra HUD: Layout Tips",
+    date: "February 18, 2026",
+    author: "Rajdeep Singh",
+    readTime: "5 min read",
+    tag: "Guide",
+    content: `
+      <h2>The Art of the HUD</h2>
+      <p>A good HUD should give you all the information you need without cluttering your screen. With Astra's drag-and-drop HUD editor, the possibilities are endless.</p>
+
+      <h2>Pro Layout Tips</h2>
+
+      <h3>1. The "Combat Core"</h3>
+      <p>Place your most critical info—HP, Armor status, and Potion effects—near the crosshair. Not *on* it, but within a small radius so you don't have to look at the corners of your screen during a tense 1v1.</p>
+
+      <h3>2. The Utility Corner</h3>
+      <p>Information like FPS, CPS, and Coordinates (XYZ) are better suited for the edges. They are "nice to have" but shouldn't distract you from the action.</p>
+
+      <h3>3. Transparency is Key</h3>
+      <p>Use the 'Global Alpha' slider in the Astra HUD settings. A slightly transparent HUD looks more modern and allows you to see players behind your menu elements.</p>
+
+      <h2>Design Philosophy</h2>
+      <p>At Astra, we believe in minimalism. Try to hide elements you don't actively use. Do you really need a 'Day Counter' while playing Bedwars? Probably not!</p>
+    `
+  },
+  13: {
+    title: "Community Spotlight: February 2026 Part 1",
+    date: "February 22, 2026",
+    author: "Somay Yadav",
+    readTime: "6 min read",
+    tag: "Community",
+    content: `
+      <h2>Community Growing Strong</h2>
+      <p>February has started with a bang! Our Discord server has seen record engagement, and we've partnered with three new Indian SMP servers.</p>
+
+      <h2>Featured Servers</h2>
+      <ul>
+        <li><strong>Astra SMP Season 2:</strong> The official Astra community server. We've added custom quests and a market system.</li>
+        <li><strong>Dragon Lair:</strong> A competitive HCF server fully optimized for use with Astra Client.</li>
+      </ul>
+
+      <h2>Event Recap: The Winter Cup</h2>
+      <p>Congratulations to team <strong>AstraVoid</strong> for winning the 4v4 Bedwars tournament last weekend. The gameplay was intense, and we're planning a larger 1v1 tournament for early March!</p>
+
+      <p>Stay tuned to our #announcements channel for more community events and partnerships.</p>
+    `
+  },
+  14: {
+    title: "The Future of Minecraft Clients: Vulkan & Beyond",
+    date: "February 25, 2026",
+    author: "Viyom Paliwal",
+    readTime: "8 min read",
+    tag: "Technical",
+    content: `
+      <h2>Beyond OpenGL</h2>
+      <p>Since its inception, Minecraft has relied on OpenGL for rendering. While ubiquitous, OpenGL is an aging standard that doesn't fully leverage the capabilities of modern hardware. This is where Vulkan comes in.</p>
+
+      <h2>What is Vulkan?</h2>
+      <p>Vulkan is a modern graphics API that provides lower-level access to the GPU. This means less driver overhead and significantly better performance, especially for CPUs that were previously bottlenecked by Minecraft's single-threaded rendering calls.</p>
+
+      <h2>Experimental Astra Vulkan Bridge</h2>
+      <p>We've been quietly testing a Vulkan rendering pipeline for Astra Client. Early internal tests show:</p>
+      <ul>
+        <li><strong>Integrated Graphics:</strong> Average 40-50% FPS increase.</li>
+        <li><strong>High-End GPUs:</strong> Lower temperatures and more stable frame times (less stutter).</li>
+      </ul>
+
+      <h2>The Road Ahead</h2>
+      <p>Switching to Vulkan isn't as simple as flipping a switch. It requires a complete rewrite of how we translate Minecraft's draw calls. We expect to move this into Public Beta (Alpha Access) by late Q2 2026.</p>
+
+      <p>Stay tuned for technical deep-dives as we push the boundaries of what's possible in Minecraft performance.</p>
+    `
+  }
 };
 
 export default function BlogPost() {
-    const { id } = useParams();
-    const post = blogContent[id];
+  const { id } = useParams();
+  const post = blogContent[id];
 
-    if (!post) {
-        return (
-            <div className="min-h-screen flex items-center justify-center text-center px-6">
-                <div>
-                    <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
-                    <Link to="/blog" className="text-[var(--primary)] hover:underline">Return to Blog</Link>
-                </div>
-            </div>
-        );
-    }
-
+  if (!post) {
     return (
-        <div className="min-h-screen pt-32 pb-24 px-6">
-            <motion.article
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="max-w-3xl mx-auto"
-            >
-                <Link to="/blog" className="inline-flex items-center gap-2 text-[var(--text-1)] hover:text-white mb-8 transition-colors">
-                    <ArrowLeft size={20} />
-                    Back to Articles
-                </Link>
-
-                <header className="mb-12">
-                    <div className="flex items-center gap-4 text-sm text-[var(--text-1)] mb-6">
-                        <span className="bg-[rgba(239,68,68,0.1)] text-[var(--primary)] px-3 py-1 rounded-full font-bold uppercase tracking-wider text-xs">
-                            {post.tag}
-                        </span>
-                        <span className="flex items-center gap-1"><Calendar size={14} /> {post.date}</span>
-                        <span className="flex items-center gap-1"><Clock size={14} /> {post.readTime}</span>
-                    </div>
-
-                    <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">{post.title}</h1>
-
-                    <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-[var(--bg-2)] flex items-center justify-center border border-[rgba(255,255,255,0.1)] overflow-hidden">
-                            {post.author === "Viyom Paliwal" && <img src={viyomPhoto} alt={post.author} className="w-full h-full object-cover" />}
-                            {post.author === "Rajdeep Singh" && <img src={rajdeepPhoto} alt={post.author} className="w-full h-full object-cover" />}
-                            {post.author === "Somay Yadav" && <img src={somayPhoto} alt={post.author} className="w-full h-full object-cover" />}
-                            {post.author === "Dikshit Kumar" && <img src={dikshitPhoto} alt={post.author} className="w-full h-full object-cover" />}
-                            {!["Viyom Paliwal", "Rajdeep Singh", "Somay Yadav", "Dikshit Kumar"].includes(post.author) && (
-                                <User size={20} className="text-[var(--text-1)]" />
-                            )}
-                        </div>
-                        <div>
-                            <p className="font-bold text-white">{post.author}</p>
-                            <p className="text-xs text-[var(--text-1)]">
-                                {post.author === "Viyom Paliwal" && "Founder & Lead Developer"}
-                                {post.author === "Rajdeep Singh" && "UI Designer"}
-                                {post.author === "Somay Yadav" && "Community Manager"}
-                                {post.author === "Dikshit Kumar" && "QA Tester"}
-                            </p>
-                        </div>
-                    </div>
-                </header>
-
-                <div
-                    className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-[var(--primary)] prose-strong:text-white prose-li:text-[var(--text-1)] text-[var(--text-1)]"
-                    dangerouslySetInnerHTML={{ __html: post.content }}
-                />
-
-                <div className="mt-16 pt-8 border-t border-[rgba(255,255,255,0.1)]">
-                    <p className="text-center text-[var(--text-1)] italic">
-                        Want to experience this optimization yourself? <Link to="/download" className="text-[var(--primary)] font-bold hover:underline">Download Astra Client</Link> today.
-                    </p>
-                </div>
-            </motion.article>
+      <div className="min-h-screen flex items-center justify-center text-center px-6">
+        <div>
+          <h1 className="text-4xl font-bold mb-4">Post Not Found</h1>
+          <Link to="/blog" className="text-[var(--primary)] hover:underline">Return to Blog</Link>
         </div>
+      </div>
     );
+  }
+
+  return (
+    <div className="min-h-screen pt-32 pb-24 px-6">
+      <motion.article
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="max-w-3xl mx-auto"
+      >
+        <Link to="/blog" className="inline-flex items-center gap-2 text-[var(--text-1)] hover:text-white mb-8 transition-colors">
+          <ArrowLeft size={20} />
+          Back to Articles
+        </Link>
+
+        <header className="mb-12">
+          <div className="flex items-center gap-4 text-sm text-[var(--text-1)] mb-6">
+            <span className="bg-[rgba(239,68,68,0.1)] text-[var(--primary)] px-3 py-1 rounded-full font-bold uppercase tracking-wider text-xs">
+              {post.tag}
+            </span>
+            <span className="flex items-center gap-1"><Calendar size={14} /> {post.date}</span>
+            <span className="flex items-center gap-1"><Clock size={14} /> {post.readTime}</span>
+          </div>
+
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">{post.title}</h1>
+
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-[var(--bg-2)] flex items-center justify-center border border-[rgba(255,255,255,0.1)] overflow-hidden">
+              {post.author === "Viyom Paliwal" && <img src={viyomPhoto} alt={post.author} className="w-full h-full object-cover" />}
+              {post.author === "Rajdeep Singh" && <img src={rajdeepPhoto} alt={post.author} className="w-full h-full object-cover" />}
+              {post.author === "Somay Yadav" && <img src={somayPhoto} alt={post.author} className="w-full h-full object-cover" />}
+              {post.author === "Dikshit Kumar" && <img src={dikshitPhoto} alt={post.author} className="w-full h-full object-cover" />}
+              {!["Viyom Paliwal", "Rajdeep Singh", "Somay Yadav", "Dikshit Kumar"].includes(post.author) && (
+                <User size={20} className="text-[var(--text-1)]" />
+              )}
+            </div>
+            <div>
+              <p className="font-bold text-white">{post.author}</p>
+              <p className="text-xs text-[var(--text-1)]">
+                {post.author === "Viyom Paliwal" && "Founder & Lead Developer"}
+                {post.author === "Rajdeep Singh" && "UI Designer"}
+                {post.author === "Somay Yadav" && "Community Manager"}
+                {post.author === "Dikshit Kumar" && "QA Tester"}
+              </p>
+            </div>
+          </div>
+        </header>
+
+        <div
+          className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-a:text-[var(--primary)] prose-strong:text-white prose-li:text-[var(--text-1)] text-[var(--text-1)]"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
+
+        <div className="mt-16 pt-8 border-t border-[rgba(255,255,255,0.1)]">
+          <p className="text-center text-[var(--text-1)] italic">
+            Want to experience this optimization yourself? <Link to="/download" className="text-[var(--primary)] font-bold hover:underline">Download Astra Client</Link> today.
+          </p>
+        </div>
+      </motion.article>
+    </div>
+  );
 }
