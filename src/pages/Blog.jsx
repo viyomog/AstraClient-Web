@@ -70,8 +70,8 @@ export default function Blog() {
         },
         {
             id: 9,
-            title: "Patch Notes v1.2: Squashing Bugs",
-            preview: "We've fixed the random crash on startup, improved font rendering, and polished the settings UI.",
+            title: "Patch Notes v0.4.0: Squashing Bugs",
+            preview: "Version 0.4.0 is here. We've fixed the random crash on startup, improved font rendering, and polished the settings UI.",
             date: "Feb 05, 2026",
             tag: "Update",
             color: "bg-blue-500"
@@ -86,8 +86,8 @@ export default function Blog() {
         },
         {
             id: 11,
-            title: "Astra Client v1.3: The Valentine's Update",
-            preview: "New pink-themed UI options, heart particle effects, and bug fixes for the cosmetic engine.",
+            title: "Astra Client v0.4.1: The Valentine's Update",
+            preview: "The latest v0.4.1 release brings new pink-themed UI options, heart particle effects, and bug fixes for the cosmetic engine.",
             date: "Feb 12, 2026",
             tag: "Update",
             color: "bg-pink-500"

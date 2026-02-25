@@ -244,7 +244,7 @@ const blogContent = {
     `
   },
   9: {
-    title: "Patch Notes v1.2: Squashing Bugs",
+    title: "Patch Notes v0.4.0: Squashing Bugs",
     date: "February 05, 2026",
     author: "Dikshit Kumar",
     readTime: "3 min read",
@@ -299,14 +299,14 @@ const blogContent = {
     `
   },
   11: {
-    title: "Astra Client v1.3: The Valentine's Update",
+    title: "Astra Client v0.4.1: The Valentine's Update",
     date: "February 12, 2026",
     author: "Dikshit Kumar",
     readTime: "4 min read",
     tag: "Update",
     content: `
       <h2>Love is in the (Astra) Air</h2>
-      <p>We're excited to announce the release of Astra Client v1.3! This update focuses on personalization and minor bug fixes reported by our amazing community.</p>
+      <p>We're excited to announce the release of Astra Client v0.4.1! This update focuses on personalization and minor bug fixes reported by our amazing community.</p>
 
       <h2>What's New?</h2>
       
