@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { Download, Zap, Shield, Layout, ArrowRight } from 'lucide-react';
+import { Download, Zap, Shield, Layout, ArrowRight, Star, Cpu, MousePointer2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
-    const [latestVersion, setLatestVersion] = useState('v1.0.0');
+    const [latestVersion, setLatestVersion] = useState('v0.4.1');
 
     useEffect(() => {
         fetch('https://api.github.com/repos/viyomog/AstraClient/releases/latest')
@@ -18,77 +18,201 @@ export default function Home() {
     }, []);
 
     const features = [
-        { icon: <Zap size={24} />, title: "Optimized Performance", desc: "Built for speed with automatic FPS boosting technology." },
-        { icon: <Layout size={24} />, title: "Modern UI", desc: "Sleek, dark-themed interface designed for gamers." },
-        { icon: <Shield size={24} />, title: "Secure & Safe", desc: "Codebase is private but verified secure. All Rights Reserved." }
+        {
+            icon: <Zap size={28} />,
+            title: "Performance+",
+            desc: "Custom JVM arguments and optimized rendering pipeline for maximum FPS.",
+            color: "var(--primary)"
+        },
+        {
+            icon: <Layout size={28} />,
+            title: "Custom HUD",
+            desc: "A powerful, drag-and-drop editor to build your perfect in-game interface.",
+            color: "var(--secondary)"
+        },
+        {
+            icon: <Shield size={28} />,
+            title: "Privacy First",
+            desc: "Zero data collection policy. Your account and personal info stay on your machine.",
+            color: "#10b981"
+        }
     ];
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+    };
+
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="relative pt-20">
             {/* Hero Section */}
-            <section className="relative pt-32 pb-48 text-center px-6 overflow-hidden">
-                {/* Background Elements */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[rgba(239,68,68,0.15)] via-transparent to-transparent pointer-events-none blur-3xl" />
+            <section className="relative py-24 md:py-40 px-6 overflow-hidden min-h-[85vh] flex items-center">
+                {/* Logo Watermark */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
+                    animate={{ opacity: 0.03, scale: 1, rotate: 0 }}
+                    transition={{ duration: 2, ease: "easeOut" }}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] pointer-events-none"
+                >
+                    <img src="/logo.ico" alt="" className="w-full h-full object-contain filter blur-sm" />
+                </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="relative z-10 max-w-5xl mx-auto"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="max-w-7xl mx-auto text-center relative z-10 w-full"
                 >
-                    <div className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full bg-[rgba(239,68,68,0.1)] border border-[rgba(239,68,68,0.2)] text-[var(--primary)] text-sm font-semibold tracking-wider uppercase">
-                        <span className="w-2 h-2 rounded-full bg-[var(--primary)] animate-pulse" />
-                        {latestVersion} Now Available
-                    </div>
+                    <motion.div
+                        variants={itemVariants}
+                        className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full glass-panel text-[var(--primary)] text-xs font-black tracking-[0.2em] uppercase shadow-[0_0_20px_rgba(59,130,246,0.15)]"
+                    >
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--primary)] opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--primary)]"></span>
+                        </span>
+                        {latestVersion} IS NOW LIVE
+                    </motion.div>
 
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-8 leading-tight tracking-tight">
-                        India's First <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-orange-500">Custom Minecraft Launcher</span>
-                    </h1>
+                    <motion.h1
+                        variants={itemVariants}
+                        className="text-6xl md:text-8xl lg:text-9xl font-heading font-black mb-10 tracking-tighter leading-none relative"
+                    >
+                        BEYOND <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] text-glow">LIMITS</span>
+                    </motion.h1>
 
-                    <p className="text-lg md:text-xl text-[var(--text-1)] mb-12 max-w-2xl mx-auto leading-relaxed">
-                        Experience the next generation of Minecraft gaming. Boost your FPS, manage mods effortlessly, and play with style.
-                    </p>
+                    <motion.p
+                        variants={itemVariants}
+                        className="text-xl md:text-2xl text-[var(--text-muted)] mb-14 max-w-2xl mx-auto font-medium"
+                    >
+                        Experience India's most powerful Minecraft client.
+                        Engineered for elite performance and unmatched style.
+                    </motion.p>
 
-                    <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <motion.div
+                        variants={itemVariants}
+                        className="flex flex-col sm:flex-row justify-center items-center gap-6"
+                    >
                         <Link
                             to="/download"
-                            className="group flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg bg-gradient-to-r from-[var(--primary)] to-orange-600 hover:shadow-[0_0_30px_rgba(239,68,68,0.4)] transition-all transform hover:-translate-y-1"
+                            className="button-premium px-10 py-5 rounded-2xl font-black text-lg text-white flex items-center gap-3 w-full sm:w-auto justify-center group overflow-hidden relative"
                         >
-                            <Download size={20} className="group-hover:animate-bounce" />
-                            Download Now
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shimmer" />
+                            <Download size={22} className="group-hover:-translate-y-1 transition-transform" />
+                            <span className="relative z-10">GET ASTRA NOW</span>
                         </Link>
 
                         <a
                             href="https://discord.gg/5AEp4bgund"
                             target="_blank"
                             rel="noreferrer"
-                            className="flex items-center gap-3 px-8 py-4 rounded-xl font-bold text-lg bg-[var(--bg-2)] border border-[rgba(255,255,255,0.1)] hover:bg-[var(--bg-1)] transition-all"
+                            className="glass-panel px-10 py-5 rounded-2xl font-black text-lg text-white flex items-center gap-3 w-full sm:w-auto justify-center transition-all hover:bg-white/5 group"
                         >
-                            Join Community
-                            <ArrowRight size={20} />
+                            <MousePointer2 size={22} className="text-[var(--secondary)] group-hover:rotate-12 transition-transform" />
+                            JOIN DISCORD
                         </a>
-                    </div>
+                    </motion.div>
+                </motion.div>
+
+                {/* Decorative Elements */}
+                <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-[var(--primary)]/10 blur-[120px] rounded-full pointer-events-none animate-pulse" style={{ animationDuration: '4s' }} />
+                <div className="absolute top-1/2 right-0 -translate-y-1/2 w-96 h-96 bg-[var(--secondary)]/10 blur-[120px] rounded-full pointer-events-none animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
+            </section>
+
+            {/* Marquee Banner Section */}
+            <section className="py-8 border-y border-white/10 relative z-10 overflow-hidden bg-[var(--bg-deep)] flex">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[var(--primary)]/10 to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--secondary)]/5 to-transparent pointer-events-none blur-sm" />
+
+                <motion.div
+                    animate={{ x: ["0%", "-50%"] }}
+                    transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
+                    className="flex whitespace-nowrap items-center w-max opacity-80"
+                >
+                    {/* Duplicate set for seamless infinite scrolling */}
+                    {[...Array(2)].map((_, i) => (
+                        <div key={i} className="flex gap-16 md:gap-32 pr-16 md:pr-32 pointer-events-none items-center">
+                            <span className="font-heading font-black text-2xl md:text-3xl italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">ELITE FPS</span>
+                            <span className="text-[var(--primary)]" ><Zap size={24} /></span>
+
+                            <span className="font-heading font-black text-2xl md:text-3xl italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">ULTRA LOW LATENCY</span>
+                            <span className="text-[var(--secondary)]" ><Zap size={24} /></span>
+
+                            <span className="font-heading font-black text-2xl md:text-3xl italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">LAG-FREE GAMING</span>
+                            <span className="text-[var(--primary)]" ><Zap size={24} /></span>
+
+                            <span className="font-heading font-black text-2xl md:text-3xl italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)]">MADE IN INDIA</span>
+                            <span className="text-[var(--secondary)]" ><Zap size={24} /></span>
+
+                            <span className="font-heading font-black text-2xl md:text-3xl italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">CUSTOM HUD</span>
+                            <span className="text-[var(--primary)]" ><Zap size={24} /></span>
+
+                            <span className="font-heading font-black text-2xl md:text-3xl italic tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">100% SECURE</span>
+                            <span className="text-[var(--secondary)]" ><Zap size={24} /></span>
+                        </div>
+                    ))}
                 </motion.div>
             </section>
 
-            {/* Features Grid */}
-            <section className="py-24 bg-[var(--bg-1)] relative">
-                <div className="max-w-6xl mx-auto px-6">
-                    <div className="grid md:grid-cols-3 gap-8">
+            {/* Features Page Preview */}
+            <section className="py-32 px-6 relative">
+                <div className="absolute inset-0 bg-[var(--bg-deep)] -skew-y-3 origin-top-left z-0" />
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, margin: "-100px" }}
+                        >
+                            <span className="text-[var(--primary)] font-black tracking-[0.2em] uppercase text-xs flex items-center gap-2 mb-4">
+                                <div className="w-2 h-2 rounded-full bg-[var(--primary)]" />
+                                Core Architecture
+                            </span>
+                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-black mt-4 tracking-tighter">
+                                ENGINEERED FOR <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--secondary)] to-[var(--primary)] text-glow text-[1.1em]">PERFECTION</span>
+                            </h2>
+                        </motion.div>
+                        <Link to="/features" className="text-white font-bold flex items-center gap-2 group hover:text-[var(--primary)] transition-colors bg-white/5 px-6 py-3 rounded-xl border border-white/10 glass-panel">
+                            View All Features <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform text-[var(--secondary)]" />
+                        </Link>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {features.map((f, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, y: 20 }}
+                                initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="p-8 rounded-3xl bg-[var(--bg-0)] border border-[rgba(255,255,255,0.05)] hover:border-[var(--primary)] transition-all group hover:shadow-2xl"
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ delay: i * 0.15, type: "spring", stiffness: 200, damping: 20 }}
+                                className="glass-panel p-10 rounded-[2.5rem] relative overflow-hidden group hover:border-[var(--primary)]/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_var(--primary-glow)]"
                             >
-                                <div className="w-14 h-14 rounded-2xl bg-[var(--bg-2)] flex items-center justify-center mb-6 text-[var(--primary)] group-hover:scale-110 transition-transform shadow-inner">
+                                <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-10 group-hover:scale-110 transition-all duration-700">
+                                    <Cpu size={140} />
+                                </div>
+                                <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--primary)]/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                                <div
+                                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-lg transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-6 bg-white/5 border border-white/10"
+                                    style={{ color: f.color }}
+                                >
                                     {f.icon}
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-white">{f.title}</h3>
-                                <p className="text-[var(--text-1)] leading-relaxed">{f.desc}</p>
+                                <h3 className="text-2xl font-black mb-4 font-heading text-white">{f.title}</h3>
+                                <p className="text-[var(--text-muted)] leading-relaxed font-medium">{f.desc}</p>
                             </motion.div>
                         ))}
                     </div>
