@@ -115,6 +115,14 @@ export default function Blog() {
             date: "Feb 25, 2026",
             tag: "Technical",
             color: "bg-purple-500"
+        },
+        {
+            id: 15,
+            title: "Astra Client v0.5.0: The AI Update",
+            preview: "Introducing Astra AI, a brand new app opening experience, and seamless automatic updates.",
+            date: "Mar 01, 2026",
+            tag: "Update",
+            color: "bg-blue-500"
         }
     ];
 
@@ -132,7 +140,7 @@ export default function Blog() {
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
-                {posts.map((post, i) => (
+                {[...posts].sort((a, b) => b.id - a.id).map((post, i) => (
                     <Link key={post.id} to={`/blog/${post.id}`}>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}

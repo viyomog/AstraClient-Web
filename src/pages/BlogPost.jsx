@@ -398,6 +398,31 @@ const blogContent = {
 
       <p>Stay tuned for technical deep-dives as we push the boundaries of what's possible in Minecraft performance.</p>
     `
+  },
+  15: {
+    title: "Astra Client v0.5.0: The AI Update",
+    date: "March 01, 2026",
+    author: "Viyom Paliwal",
+    readTime: "5 min read",
+    tag: "Update",
+    content: `
+      <h2>Welcome to the Next Generation</h2>
+      <p>We are thrilled to announce Astra Client v0.5.0, bringing massive improvements to your user experience and introducing groundbreaking new features. This is one of our most exciting updates yet!</p>
+
+      <h2>What's New in v0.5.0?</h2>
+      
+      <h3>1. Introducing Astra AI</h3>
+      <p>Meet the newest member of your gaming setup: <strong>Astra AI</strong>. Our dedicated AI bot is now integrated directly into the client ecosystem. Astra AI is here to assist you with configurations, answer your questions instantly, and help you get the absolute most out of your Minecraft experience. This is just the beginning of our AI journey.</p>
+
+      <h3>2. Seamless Automatic Updates</h3>
+      <p>Never fall behind on performance tweaks or new features again. We've completely rebuilt our update engine. Astra Client now features a robust <strong>Auto Update Checker</strong>. It will automatically detect when a new version is released and prompt you to upgrade effortlessly. You can finally stop worrying about whether a new update is out or not!</p>
+
+      <h3>3. Revamped App Opening Screen</h3>
+      <p>First impressions matter. We've redesigned the app's opening splash screen from the ground up to be more dynamic, modern, and engaging. It now loads faster and features a stunning new aesthetic to get you hyped before you even join a server.</p>
+
+      <h2>More to Come</h2>
+      <p>This update lays the foundation for many of our Q2 plans. We hope you enjoy the new quality-of-life improvements and exploring what Astra AI can do. Let us know your thoughts on our Discord!</p>
+    `
   }
 };
 
