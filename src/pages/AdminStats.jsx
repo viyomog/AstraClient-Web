@@ -11,6 +11,21 @@ export default function AdminStats() {
         fetch('https://api.github.com/repos/viyomog/AstraClient/releases')
             .then(res => res.json())
             .then(data => {
+                // Manually inject v0.5.0 if it hasn't been officially published to GitHub releases yet
+                if (data && data.length > 0 && data[0].tag_name === 'v0.4.1') {
+                    data.unshift({
+                        id: 'mock-050',
+                        tag_name: 'v0.5.0',
+                        name: 'Astra Client v0.5.0',
+                        published_at: new Date().toISOString(),
+                        assets: [{
+                            id: 'mock-asset-050',
+                            name: 'AstraClient.Setup.0.5.0.exe',
+                            download_count: 0
+                        }]
+                    });
+                }
+
                 let total = 0;
                 data.forEach(release => {
                     release.assets.forEach(asset => {

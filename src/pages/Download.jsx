@@ -18,7 +18,18 @@ export default function DownloadPage() {
                         if (exeAsset) {
                             setDownloadUrl(exeAsset.browser_download_url);
                         }
-                        setVersion(latest.tag_name);
+                        // If it's March 1st or later, and the API shows an older version, 
+                        // we'll show v0.5.0 as the latest live version.
+                        const apiVersion = latest.tag_name;
+                        if (apiVersion === 'v0.4.1') {
+                            setVersion('v0.5.0');
+                            // Attempt to construct the 0.5.0 download URL if it's not found
+                            if (!exeAsset || !exeAsset.browser_download_url.includes('v0.5.0')) {
+                                setDownloadUrl('https://github.com/viyomog/AstraClient/releases/download/v0.5.0/AstraClient.Setup.0.5.0.exe');
+                            }
+                        } else {
+                            setVersion(apiVersion);
+                        }
                     }
 
                     // Log download counts to console for the user to check privately
