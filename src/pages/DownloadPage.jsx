@@ -91,7 +91,7 @@ const DownloadPage = () => {
                         </div>
 
                         <a
-                            href="https://github.com/viyomog/AstraClient/releases/latest/download/AstraClient.Setup.0.5.0.exe"
+                            href="https://github.com/viyomog/AstraClient/releases/latest/download/AstraClient-Setup.exe"
                             style={{
                                 background: 'linear-gradient(135deg, var(--primary) 0%, #b485f8 100%)',
                                 color: '#fff',
