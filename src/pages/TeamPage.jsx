@@ -18,7 +18,7 @@ const teamRoster = [
             { icon: <Twitter size={20} />, link: "https://x.com/ViyomOg" },
             { icon: <Linkedin size={20} />, link: "https://www.linkedin.com/in/viyompaliwal/" }
         ],
-        mcUsername: "mr_zorix",
+        mcUsername: "ViyomOG",
         accent: "#ef4444", // Red
         bg: "rgba(220, 38, 38, 0.1)"
     },
@@ -53,7 +53,7 @@ const teamRoster = [
             { icon: <Twitter size={20} />, link: "https://x.com/otakurush11" },
             { icon: <Linkedin size={20} />, link: "https://www.linkedin.com/in/dikshit-kumar-252026352/" }
         ],
-        mcUsername: "saphyras",
+        mcUsername: "Famada_",
         accent: "#10b981", // Emerald
         bg: "rgba(16, 185, 129, 0.1)"
     },
