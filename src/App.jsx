@@ -10,6 +10,7 @@ import ContactPage from './pages/ContactPage'
 import DownloadPage from './pages/DownloadPage'
 import TermsPage from './pages/TermsPage'
 import PrivacyPage from './pages/PrivacyPage'
+import BenchmarksPage from './pages/BenchmarksPage'
 
 function HomePage() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/download" element={<DownloadPage />} />
+          <Route path="/benchmarks" element={<BenchmarksPage />} />
           <Route path="/terms" element={<TermsPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
         </Routes>

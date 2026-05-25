@@ -502,6 +502,75 @@ h6 {
   }
 }
 
+/* Oscilloscope & Live Telemetry Scrolling Animations */
+@keyframes live-sawtooth {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+
+.sawtooth-animate {
+  animation: live-sawtooth 1.2s linear infinite;
+}
+
+@keyframes live-wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100px);
+  }
+}
+
+.wave-animate {
+  animation: live-wave 2.5s linear infinite;
+}
+
+@keyframes laser-sweep {
+  0% {
+    left: -10%;
+  }
+  50% {
+    left: 110%;
+  }
+  100% {
+    left: -10%;
+  }
+}
+
+.laser-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+  box-shadow: 0 0 15px var(--primary);
+  opacity: 0.6;
+  z-index: 10;
+  pointer-events: none;
+  animation: laser-sweep 4s ease-in-out infinite;
+}
+
+/* Benchmark scanning overlay icon animation */
+@keyframes activity-pulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.15) rotate(10deg);
+    opacity: 1;
+  }
+}
+
+.scrolling-line {
+  animation: activity-pulse 0.5s ease-in-out infinite;
+}
+
+
 
 
 
