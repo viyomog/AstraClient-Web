@@ -1,109 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Zap, Sparkles, Paintbrush, MonitorPlay, Shield, Rocket } from 'lucide-react';
-
-// Isolated spotlight-glow + 3D tilt feature card component
-const InteractiveFeatureCard = ({ feature, index, animate }) => {
-    const cardRef = useRef(null);
-    const [tiltStyle, setTiltStyle] = useState({});
-
-    // Mouse coordinates tracker for spotlight glow
-    const handleMouseMove = (e) => {
-        if (!cardRef.current) return;
-        const card = cardRef.current;
-        const rect = card.getBoundingClientRect();
-        
-        // Calculate mouse relative coordinates
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        // Set CSS variables for spotlight gradient
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-
-        // Subtle 3D perspective tilt
-        const normX = (x / rect.width) - 0.5;
-        const normY = (y / rect.height) - 0.5;
-        const rotX = -normY * 12;
-        const rotY = normX * 12;
-
-        setTiltStyle({
-            transform: `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.02, 1.02, 1.02)`
-        });
-    };
-
-    const handleMouseLeave = () => {
-        setTiltStyle({
-            transform: 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)',
-            transition: 'transform 0.4s ease'
-        });
-    };
-
-    return (
-        <div 
-            ref={cardRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            className={`glow-card-interactive reveal-hidden ${animate ? 'reveal-visible' : ''}`}
-            style={{
-                borderRadius: '24px',
-                padding: '2.5rem',
-                cursor: 'pointer',
-                transition: 'border-color 0.3s, box-shadow 0.3s, transform 0.15s ease-out',
-                animationDelay: `${index * 100}ms`,
-                ...tiltStyle
-            }}
-        >
-            {/* Background spotlight overlays */}
-            <div className="glow-card-spotlight"></div>
-            <div className="glow-card-border-glow"></div>
-
-            {/* Content overlaying the glow */}
-            <div style={{ position: 'relative', zIndex: 5 }} className="tilt-card-inner">
-                
-                {/* Glowing neon card icon */}
-                <div className="feature-card-icon" style={{
-                    width: '56px',
-                    height: '56px',
-                    borderRadius: '16px',
-                    background: 'rgba(134, 64, 239, 0.05)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--primary)',
-                    border: '1px solid rgba(134, 64, 239, 0.15)',
-                    transition: 'all 0.3s ease',
-                    marginBottom: '1.75rem',
-                    boxShadow: '0 0 15px rgba(134, 64, 239, 0.05)'
-                }}>
-                    {feature.icon}
-                </div>
-
-                <h3 style={{
-                    fontSize: '1.25rem',
-                    fontWeight: '800',
-                    marginBottom: '0.85rem',
-                    color: 'var(--text-main)',
-                    letterSpacing: '-0.3px'
-                }}>
-                    {feature.title}
-                </h3>
-
-                <p style={{
-                    color: 'var(--text-muted)',
-                    lineHeight: '1.65',
-                    fontSize: '0.925rem'
-                }}>
-                    {feature.desc}
-                </p>
-            </div>
-        </div>
-    );
-};
+import React from 'react';
+import { Zap, Sparkles, Paintbrush, MonitorPlay, Shield, Rocket, Brain, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Features = () => {
-    const [animate, setAnimate] = useState(false);
-    const sectionRef = useRef(null);
-
     const featureList = [
         {
             title: "Hyper Optimized",
@@ -134,81 +33,144 @@ const Features = () => {
             title: "Constant Updates",
             desc: "Our dedicated team works around the clock to bring you the latest features and optimizations.",
             icon: <Rocket size={24} />
+        },
+        {
+            title: "Astra AI Companion",
+            desc: "Get instant Minecraft knowledge, recipe info, and building advice on the fly without tabbing out of the game.",
+            icon: <Brain size={24} />
+        },
+        {
+            title: "Seamless Accounts",
+            desc: "Effortlessly manage and switch between multiple Microsoft and Mojang profiles with a single click.",
+            icon: <Users size={24} />
         }
     ];
 
-    // Scroll trigger intersection observer
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setAnimate(true);
-                    observer.unobserve(entry.target);
-                }
-            },
-            { threshold: 0.15 }
-        );
-
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+    // Animation variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.1 }
         }
+    };
 
-        return () => observer.disconnect();
-    }, []);
+    const cardVariants = {
+        hidden: { y: 40, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: { type: "spring", stiffness: 80, damping: 15 }
+        }
+    };
 
     return (
-        <section 
-            ref={sectionRef} 
-            className="section" 
-            id="features" 
-            style={{ backgroundColor: 'var(--bg-darker)', position: 'relative', overflow: 'hidden' }}
-        >
-            {/* Background spotlight decoration */}
-            <div style={{
-                position: 'absolute',
-                top: '20%', left: '50%', transform: 'translateX(-50%)',
-                width: '600px', height: '300px',
-                background: 'var(--primary)',
-                filter: 'blur(160px)', opacity: 0.05,
-                pointerEvents: 'none',
-                zIndex: 0
-            }}></div>
-
+        <section className="section" id="features" style={{ backgroundColor: 'var(--bg-darker)', position: 'relative', overflow: 'hidden' }}>
             <div className="container" style={{ position: 'relative', zIndex: 2 }}>
 
-                {/* Section Header with dynamic fade reveal */}
-                <div style={{ textAlign: 'center', marginBottom: '5rem' }} className={`reveal-hidden ${animate ? 'reveal-visible' : ''}`}>
-                    <h2 style={{ 
-                        fontSize: 'clamp(2rem, 5vw, 2.75rem)', 
-                        fontWeight: '900', 
-                        marginBottom: '1.25rem', 
-                        letterSpacing: '-1px' 
-                    }}>
-                        Why Choose <span className="text-gradient">Astra Client?</span>
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
+                    style={{ textAlign: 'center', marginBottom: '5rem' }}
+                >
+                    <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: '800', marginBottom: '1.5rem', letterSpacing: '-1px' }}>
+                        Why Choose <span style={{
+                            background: 'linear-gradient(135deg, var(--primary), #d946ef)',
+                            WebkitBackgroundClip: 'text',
+                            backgroundClip: 'text',
+                            color: 'transparent',
+                            textShadow: '0 0 40px rgba(134, 64, 239, 0.3)'
+                        }}>Astra Client?</span>
                     </h2>
-                    <p style={{ 
-                        color: 'var(--text-muted)', 
-                        fontSize: '1.05rem', 
-                        maxWidth: '600px', 
-                        margin: '0 auto', 
-                        lineHeight: '1.7',
-                        padding: '0 1rem'
-                    }}>
+                    <p style={{ color: 'var(--text-muted)', fontSize: 'clamp(1rem, 2vw, 1.15rem)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.8', padding: '0 1rem' }}>
                         We've stripped away the bloat and focused intensely on what matters: pure, unadulterated performance wrapped in a premium design.
                     </p>
-                </div>
+                </motion.div>
 
-                {/* Staggered dynamic cards layout */}
-                <div className="features-grid">
+                <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="grid-responsive"
+                >
                     {featureList.map((feature, idx) => (
-                        <InteractiveFeatureCard 
+                        <motion.div 
                             key={idx} 
-                            feature={feature} 
-                            index={idx}
-                            animate={animate}
-                        />
+                            variants={cardVariants}
+                            whileHover={{ 
+                                y: -8, 
+                                scale: 1.02, 
+                                borderColor: 'rgba(134, 64, 239, 0.4)',
+                                boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.08), 0 20px 45px rgba(134, 64, 239, 0.12)'
+                            }}
+                            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                            style={{
+                                position: 'relative',
+                                overflow: 'hidden',
+                                background: 'rgba(10, 13, 20, 0.45)',
+                                backdropFilter: 'blur(20px)',
+                                WebkitBackdropFilter: 'blur(20px)',
+                                border: '1px solid rgba(255,255,255,0.03)',
+                                borderRadius: '24px',
+                                padding: '3rem 2.5rem',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                height: '100%',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            {/* Ambient Top Glow */}
+                            <div style={{
+                                position: 'absolute',
+                                top: 0,
+                                left: '50%',
+                                transform: 'translateX(-50%)',
+                                width: '60%',
+                                height: '1px',
+                                background: 'radial-gradient(ellipse at center, rgba(134, 64, 239, 0.6) 0%, transparent 70%)',
+                                opacity: 0.5
+                            }}></div>
+
+                            <div className="icon-container" style={{
+                                width: '56px',
+                                height: '56px',
+                                borderRadius: '16px',
+                                background: 'rgba(134, 64, 239, 0.05)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: 'var(--primary)',
+                                marginBottom: '2rem',
+                                border: '1px solid rgba(134, 64, 239, 0.1)',
+                                transition: 'all 0.3s ease'
+                            }}>
+                                {feature.icon}
+                            </div>
+
+                            <h3 style={{
+                                fontSize: '1.35rem',
+                                fontWeight: '700',
+                                marginBottom: '1rem',
+                                color: 'var(--text-main)',
+                                letterSpacing: '-0.5px'
+                            }}>
+                                {feature.title}
+                            </h3>
+
+                            <p style={{
+                                color: 'var(--text-muted)',
+                                lineHeight: '1.7',
+                                fontSize: '0.95rem',
+                                marginTop: 'auto'
+                            }}>
+                                {feature.desc}
+                            </p>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
             </div>
         </section>

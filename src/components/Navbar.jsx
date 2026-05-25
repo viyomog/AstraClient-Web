@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Download } from 'lucide-react';
 import logo from '../assets/logo.png';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
-
-    // Close mobile menu on page change
-    useEffect(() => {
-        setMobileMenuOpen(false);
-    }, [location]);
 
     // Handle scroll effect for glass navbar
     useEffect(() => {
@@ -27,6 +23,11 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Close mobile menu when route changes
+    useEffect(() => {
+        setIsOpen(false);
+    }, [location]);
+
     const navLinks = [
         { name: "Home", path: "/" },
         { name: "Features", path: "/features" },
@@ -38,47 +39,52 @@ const Navbar = () => {
 
     return (
         <>
-            <nav style={{
-                position: 'fixed',
-                top: 0, left: 0, right: 0,
-                zIndex: 100,
-                padding: scrolled ? '1rem 0' : '1.5rem 0',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                background: scrolled ? 'rgba(6, 8, 12, 0.75)' : 'transparent',
-                backdropFilter: scrolled ? 'blur(20px)' : 'none',
-                WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
-                borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent'
-            }}>
+            <motion.nav 
+                initial={{ y: -100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                style={{
+                    position: 'fixed',
+                    top: 0, left: 0, right: 0,
+                    zIndex: 100,
+                    padding: scrolled ? '0.8rem 0' : '1.2rem 0',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    background: scrolled ? 'rgba(6, 8, 12, 0.75)' : 'transparent',
+                    backdropFilter: scrolled ? 'blur(20px)' : 'none',
+                    WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
+                    borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent'
+                }}
+            >
                 <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     
                     {/* Brand Logo */}
                     <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', textDecoration: 'none' }}>
-                        <div style={{
-                            width: '48px',
-                            height: '48px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            transition: 'transform 0.3s ease'
-                        }}
-                        onMouseOver={(e) => e.currentTarget.style.transform = 'rotate(10deg) scale(1.05)'}
-                        onMouseOut={(e) => e.currentTarget.style.transform = 'rotate(0) scale(1)'}
+                        <motion.div 
+                            whileHover={{ scale: 1.05, rotate: 5 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                            style={{
+                                width: '48px',
+                                height: '48px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}
                         >
                             <img src={logo} alt="Astra Client Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                        </div>
-
+                        </motion.div>
+                        
                         <span style={{
-                            fontSize: '1.5rem',
+                            fontSize: '1.4rem',
                             fontWeight: '800',
                             letterSpacing: '-0.04em',
                             display: 'flex',
-                            alignItems: 'center'
+                            alignItems: 'center',
                         }}>
                             <span style={{
                                 background: 'linear-gradient(to right, #ffffff, #e2e8f0)',
                                 WebkitBackgroundClip: 'text',
                                 backgroundClip: 'text',
-                                color: 'transparent'
+                                color: 'transparent',
                             }}>Astra</span>
                             <span style={{
                                 background: 'linear-gradient(to right, var(--primary), #c084fc)',
@@ -86,13 +92,12 @@ const Navbar = () => {
                                 backgroundClip: 'text',
                                 color: 'transparent',
                                 fontWeight: '500',
-                                textShadow: '0 0 20px rgba(134, 64, 239, 0.3)'
                             }}>Client</span>
                         </span>
                     </Link>
 
                     {/* Desktop Navigation Links */}
-                    <div className="nav-links-desktop">
+                    <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }} className="md-flex">
                         {navLinks.map((link) => {
                             const isActive = location.pathname === link.path;
                             return (
@@ -103,80 +108,140 @@ const Navbar = () => {
                                         color: isActive ? 'var(--text-main)' : 'var(--text-muted)',
                                         textDecoration: 'none',
                                         fontSize: '1rem',
-                                        fontWeight: '500',
-                                        transition: 'all 0.2s ease',
+                                        fontWeight: isActive ? '600' : '500',
+                                        transition: 'color 0.2s ease',
                                         position: 'relative',
                                         padding: '0.25rem 0'
-                                    }}
-                                    onMouseOver={(e) => e.target.style.color = 'var(--text-main)'}
-                                    onMouseOut={(e) => {
-                                        if (!isActive) e.target.style.color = 'var(--text-muted)';
                                     }}
                                 >
                                     {link.name}
                                     {isActive && (
-                                        <span style={{
-                                            position: 'absolute',
-                                            bottom: 0, left: 0, right: 0,
-                                            height: '2px',
-                                            background: 'var(--primary)',
-                                            borderRadius: '2px',
-                                            boxShadow: '0 0 8px var(--primary)'
-                                        }} />
+                                        <motion.div 
+                                            layoutId="activeNavBorder"
+                                            style={{
+                                                position: 'absolute',
+                                                bottom: 0,
+                                                left: 0,
+                                                right: 0,
+                                                height: '2px',
+                                                background: 'linear-gradient(to right, var(--primary), #c084fc)',
+                                                borderRadius: '2px'
+                                            }}
+                                        />
                                     )}
                                 </Link>
                             );
                         })}
                     </div>
 
-                    {/* Action Button & Hamburger */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
-                        <Link to="/download" style={{ textDecoration: 'none' }} className="nav-links-desktop">
-                            <button className="btn btn-primary" style={{ padding: '0.6rem 1.4rem', fontSize: '0.9rem', borderRadius: '8px' }}>
-                                Download
-                            </button>
+                    {/* Download Button (Desktop) & Hamburger Button (Mobile) */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                        <Link to="/download" className="md-flex" style={{ textDecoration: 'none' }}>
+                            <motion.button 
+                                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(134, 64, 239, 0.6)" }}
+                                whileTap={{ scale: 0.95 }}
+                                className="btn btn-primary" 
+                                style={{ padding: '0.6rem 1.4rem', fontSize: '0.9rem', borderRadius: '8px' }}
+                            >
+                                <Download size={14} style={{ marginRight: '6px' }} /> Download
+                            </motion.button>
                         </Link>
 
+                        {/* Hamburger Button */}
                         <button 
-                            className={`navbar-hamburger ${mobileMenuOpen ? 'active' : ''}`}
-                            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                            aria-label="Toggle menu"
+                            className="mobile-menu-btn" 
+                            onClick={() => setIsOpen(!isOpen)}
+                            aria-label="Toggle Menu"
                         >
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                            {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
                     </div>
+
                 </div>
-            </nav>
+            </motion.nav>
 
             {/* Mobile Navigation Drawer */}
-            <div className={`navbar-mobile-overlay ${mobileMenuOpen ? 'active' : ''}`}>
-                {navLinks.map((link) => {
-                    const isActive = location.pathname === link.path;
-                    return (
-                        <Link 
-                            key={link.name} 
-                            to={link.path} 
+            <AnimatePresence>
+                {isOpen && (
+                    <>
+                        {/* Dark backdrop overlay */}
+                        <motion.div 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setIsOpen(false)}
                             style={{
-                                color: isActive ? 'var(--text-main)' : 'var(--text-muted)',
-                                textDecoration: 'none',
-                                fontSize: '1.5rem',
-                                fontWeight: '600',
-                                transition: 'color 0.2s',
-                                textShadow: isActive ? '0 0 15px rgba(134, 64, 239, 0.4)' : 'none'
+                                position: 'fixed',
+                                top: 0, left: 0, right: 0, bottom: 0,
+                                background: 'rgba(0, 0, 0, 0.6)',
+                                backdropFilter: 'blur(4px)',
+                                WebkitBackdropFilter: 'blur(4px)',
+                                zIndex: 999
                             }}
+                        />
+
+                        {/* Drawer body */}
+                        <motion.div 
+                            initial={{ x: '100%' }}
+                            animate={{ x: 0 }}
+                            exit={{ x: '100%' }}
+                            transition={{ type: "spring", bounce: 0.15, duration: 0.4 }}
+                            className="mobile-drawer"
                         >
-                            {link.name}
-                        </Link>
-                    );
-                })}
-                <Link to="/download" style={{ textDecoration: 'none', marginTop: '1.5rem' }}>
-                    <button className="btn btn-primary" style={{ padding: '0.8rem 2.2rem', fontSize: '1.1rem', borderRadius: '12px' }}>
-                        <Download size={18} style={{ marginRight: '0.5rem' }} /> Download Now
-                    </button>
-                </Link>
-            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                                <span style={{ fontSize: '1.2rem', fontWeight: '800', color: '#fff' }}>Menu</span>
+                                <button 
+                                    onClick={() => setIsOpen(false)}
+                                    style={{
+                                        border: 'none', color: '#fff', cursor: 'pointer',
+                                        padding: '0.5rem', borderRadius: '50%', background: 'rgba(255,255,255,0.05)'
+                                    }}
+                                >
+                                    <X size={20} />
+                                </button>
+                            </div>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                                {navLinks.map((link) => {
+                                    const isActive = location.pathname === link.path;
+                                    return (
+                                        <Link 
+                                            key={link.name} 
+                                            to={link.path}
+                                            style={{
+                                                color: isActive ? '#fff' : 'var(--text-muted)',
+                                                textDecoration: 'none',
+                                                fontSize: '1.15rem',
+                                                fontWeight: isActive ? '600' : '500',
+                                                padding: '0.5rem 0',
+                                                borderBottom: '1px solid rgba(255,255,255,0.03)',
+                                                display: 'flex',
+                                                justifyContent: 'space-between',
+                                                alignItems: 'center'
+                                            }}
+                                        >
+                                            {link.name}
+                                            {isActive && <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--primary)' }} />}
+                                        </Link>
+                                    );
+                                })}
+                            </div>
+
+                            <div style={{ marginTop: 'auto' }}>
+                                <Link to="/download" style={{ textDecoration: 'none' }}>
+                                    <motion.button 
+                                        whileTap={{ scale: 0.95 }}
+                                        className="btn btn-primary" 
+                                        style={{ width: '100%', padding: '0.9rem', borderRadius: '12px', fontSize: '1rem' }}
+                                    >
+                                        <Download size={18} style={{ marginRight: '8px' }} /> Download Client
+                                    </motion.button>
+                                </Link>
+                            </div>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
         </>
     );
 };

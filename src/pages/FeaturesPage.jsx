@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 import imgAccount from '../assets/feature/account.png';
 import imgAstraAi from '../assets/feature/astra ai.png';
@@ -48,11 +49,21 @@ const featuresData = [
 ];
 
 const FeaturesPage = () => {
+    // Animation variants
+    const rowVariants = {
+        hidden: { opacity: 0, y: 40 },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: { type: "spring", stiffness: 60, damping: 15 }
+        }
+    };
+
     return (
-        <div style={{ paddingTop: '80px', minHeight: '100vh', backgroundColor: 'var(--bg-darker)' }}>
+        <div style={{ paddingTop: 'clamp(100px, 15vh, 140px)', minHeight: '100vh', backgroundColor: 'var(--bg-darker)', paddingBottom: '4rem', overflow: 'hidden' }}>
 
             {/* Page Header */}
-            <section className="section" style={{ paddingBottom: '2rem', textAlign: 'center', position: 'relative' }}>
+            <section style={{ paddingBottom: '2rem', textAlign: 'center', position: 'relative' }}>
                 <div style={{
                     position: 'absolute',
                     top: '0%', left: '50%', transform: 'translate(-50%, -50%)',
@@ -63,92 +74,111 @@ const FeaturesPage = () => {
                 }}></div>
 
                 <div className="container">
-                    <div style={{
-                        display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                        padding: '0.5rem 1rem', background: 'rgba(134, 64, 239, 0.1)',
-                        border: '1px solid rgba(134, 64, 239, 0.2)', borderRadius: '20px',
-                        color: 'var(--primary)', fontWeight: '600', marginBottom: '1.5rem'
-                    }}>
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        style={{
+                            display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                            padding: '0.5rem 1.2rem', background: 'rgba(134, 64, 239, 0.1)',
+                            border: '1px solid rgba(134, 64, 239, 0.2)', borderRadius: '20px',
+                            color: 'var(--primary)', fontWeight: '600', marginBottom: '1.5rem'
+                        }}
+                    >
                         <Sparkles size={16} /> Showcase
-                    </div>
-                    <h1 style={{ fontSize: '4rem', fontWeight: '800', marginBottom: '1rem', letterSpacing: '-1px' }}>
+                    </motion.div>
+                    
+                    <motion.h1 
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                        style={{ fontSize: 'clamp(2.5rem, 7vw, 4rem)', fontWeight: '800', marginBottom: '1rem', letterSpacing: '-1px' }}
+                    >
                         Experience <span style={{
                             background: 'linear-gradient(135deg, var(--primary), #d946ef)',
                             WebkitBackgroundClip: 'text',
                             backgroundClip: 'text',
                             color: 'transparent'
                         }}>Astra</span>
-                    </h1>
-                    <p style={{ color: 'var(--text-muted)', fontSize: '1.25rem', maxWidth: '700px', margin: '0 auto', lineHeight: '1.7' }}>
+                    </motion.h1>
+                    
+                    <motion.p 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        style={{ color: 'var(--text-muted)', fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', maxWidth: '700px', margin: '0 auto', lineHeight: '1.7', padding: '0 1rem' }}
+                    >
                         Every pixel has been engineered to deliver a flawless, deeply customized experience. Take a detailed look at what makes Astra Client the best choice for Minecraft.
-                    </p>
+                    </motion.p>
                 </div>
             </section>
 
             {/* Gallery Grid */}
-            <section className="section" style={{ paddingTop: '2rem' }}>
+            <section style={{ paddingTop: '2rem' }}>
                 <div className="container">
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '6rem', paddingBottom: '6rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem', paddingBottom: '4rem' }}>
                         {featuresData.map((item, idx) => (
-                            <div key={idx} style={{
-                                display: 'flex',
-                                flexDirection: item.reversed ? 'row-reverse' : 'row',
-                                alignItems: 'center',
-                                gap: '4rem',
-                                flexWrap: 'wrap'
-                            }}>
+                            <motion.div 
+                                key={idx} 
+                                className={`feature-page-row ${item.reversed ? 'reversed' : ''}`}
+                                variants={rowVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, margin: "-100px" }}
+                                style={{
+                                    alignItems: 'center',
+                                    flexWrap: 'wrap'
+                                }}
+                            >
 
                                 {/* Image Container */}
-                                <div style={{ flex: '1.5', minWidth: '400px', position: 'relative' }}>
+                                <div className="feature-page-img-container" style={{ flex: '1.5', minWidth: 'min(100%, 360px)', position: 'relative' }}>
                                     {/* Ambient glow behind image */}
                                     <div style={{
                                         position: 'absolute',
                                         top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
                                         width: '80%', height: '80%',
                                         background: 'var(--primary)',
-                                        filter: 'blur(100px)', opacity: 0.1,
+                                        filter: 'blur(100px)', opacity: 0.08,
                                         zIndex: 0
                                     }}></div>
 
-                                    <div style={{
-                                        position: 'relative',
-                                        zIndex: 1,
-                                        borderRadius: '24px',
-                                        padding: '0.5rem',
-                                        background: 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01))',
-                                        border: '1px solid rgba(255,255,255,0.05)',
-                                        boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
-                                        transition: 'transform 0.4s ease',
-                                        cursor: 'pointer'
-                                    }}
-                                        onMouseOver={(e) => {
-                                            e.currentTarget.style.transform = item.reversed ? 'perspective(1000px) rotateY(-2deg) scale(1.02)' : 'perspective(1000px) rotateY(2deg) scale(1.02)';
-                                            e.currentTarget.style.border = '1px solid rgba(134, 64, 239, 0.3)';
+                                    <motion.div 
+                                        whileHover={{ 
+                                            scale: 1.02,
+                                            rotateY: item.reversed ? -2 : 2,
+                                            borderColor: 'rgba(134, 64, 239, 0.3)'
                                         }}
-                                        onMouseOut={(e) => {
-                                            e.currentTarget.style.transform = 'perspective(1000px) rotateY(0deg) scale(1)';
-                                            e.currentTarget.style.border = '1px solid rgba(255,255,255,0.05)';
-                                        }}>
+                                        style={{
+                                            position: 'relative',
+                                            zIndex: 1,
+                                            borderRadius: '24px',
+                                            padding: '0.5rem',
+                                            background: 'linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))',
+                                            border: '1px solid rgba(255,255,255,0.05)',
+                                            boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
                                         <img src={item.img} alt={item.title} style={{
                                             width: '100%',
                                             height: 'auto',
                                             borderRadius: '20px',
                                             display: 'block'
                                         }} />
-                                    </div>
+                                    </motion.div>
                                 </div>
 
                                 {/* Text Content */}
-                                <div style={{ flex: '1', minWidth: '300px' }}>
-                                    <h3 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '1.5rem', color: 'var(--text-main)', lineHeight: '1.2' }}>
+                                <div style={{ flex: '1', minWidth: '280px' }}>
+                                    <h3 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: '800', marginBottom: '1rem', color: 'var(--text-main)', lineHeight: '1.25' }}>
                                         {item.title}
                                     </h3>
-                                    <p style={{ color: 'var(--text-muted)', fontSize: '1.15rem', lineHeight: '1.8' }}>
+                                    <p style={{ color: 'var(--text-muted)', fontSize: 'clamp(0.95rem, 2vw, 1.15rem)', lineHeight: '1.75' }}>
                                         {item.desc}
                                     </p>
                                 </div>
 
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>

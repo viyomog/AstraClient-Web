@@ -1,30 +1,48 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const TermsPage = () => {
     return (
-        <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--bg-darker)', color: '#cbd5e1' }}>
-            <div className="container" style={{ maxWidth: '900px', paddingBottom: '8rem' }}>
+        <div style={{ paddingTop: 'clamp(100px, 15vh, 140px)', minHeight: '100vh', backgroundColor: 'var(--bg-darker)', color: '#cbd5e1', overflow: 'hidden' }}>
+            <div className="container" style={{ maxWidth: '900px', paddingBottom: '6rem' }}>
 
                 {/* Header */}
-                <header style={{ marginBottom: '4rem', textAlign: 'center' }}>
-                    <h1 style={{ fontSize: '3rem', fontWeight: '900', color: '#fff', marginBottom: '1rem' }}>
+                <header style={{ marginBottom: '3rem', textAlign: 'center' }}>
+                    <motion.h1 
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        style={{ fontSize: 'clamp(2.2rem, 6vw, 3rem)', fontWeight: '900', color: '#fff', marginBottom: '1rem' }}
+                    >
                         Terms of <span style={{ color: 'var(--primary)' }}>Service</span>
-                    </h1>
-                    <p style={{ color: '#94a3b8' }}>Last Updated: March 01, 2026</p>
+                    </motion.h1>
+                    <motion.p 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.15 }}
+                        style={{ color: '#94a3b8' }}
+                    >
+                        Last Updated: March 01, 2026
+                    </motion.p>
                 </header>
 
                 {/* Content */}
-                <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '24px', padding: '3rem', lineHeight: '1.7' }}>
+                <motion.div 
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ type: "spring", stiffness: 60, damping: 15, delay: 0.2 }}
+                    style={{ background: 'var(--bg-card)', border: '1px solid var(--border)', borderRadius: '24px', padding: 'clamp(1.5rem, 5vw, 3rem)', lineHeight: '1.7' }}
+                >
 
                     <section style={{ marginBottom: '2.5rem' }}>
-                        <h2 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '1rem', fontWeight: '700' }}>1. Acceptance of Terms</h2>
+                        <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>1. Acceptance of Terms</h2>
                         <p>
                             By downloading, installing, or using Astra Client, you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the software.
                         </p>
                     </section>
 
                     <section style={{ marginBottom: '2.5rem' }}>
-                        <h2 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '1rem', fontWeight: '700' }}>2. License and Use</h2>
+                        <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>2. License and Use</h2>
                         <p>
                             Astra Client grants you a personal, non-exclusive, non-transferable license to use the software for personal, non-commercial Minecraft gameplay. You may not:
                         </p>
@@ -36,34 +54,34 @@ const TermsPage = () => {
                     </section>
 
                     <section style={{ marginBottom: '2.5rem' }}>
-                        <h2 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '1rem', fontWeight: '700' }}>3. Disclaimer of Warranty</h2>
+                        <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>3. Disclaimer of Warranty</h2>
                         <p>
                             THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. Astra Client is not responsible for any damage to your hardware, data loss, or server-side bans resulting from the use of this software.
                         </p>
                     </section>
 
                     <section style={{ marginBottom: '2.5rem' }}>
-                        <h2 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '1rem', fontWeight: '700' }}>4. Third Party Integration</h2>
+                        <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>4. Third Party Integration</h2>
                         <p>
                             Astra Client is not affiliated with Microsoft or Mojang AB. You must own a legitimate copy of Minecraft to use our client. Any use of Microsoft services through the client is subject to Microsoft's own Terms of Use and Privacy Policy.
                         </p>
                     </section>
 
                     <section style={{ marginBottom: '2.5rem' }}>
-                        <h2 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '1rem', fontWeight: '700' }}>5. Updates and Changes</h2>
+                        <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>5. Updates and Changes</h2>
                         <p>
                             We reserve the right to update these terms at any time. Continued use of the software after changes constitutes acceptance of the new terms.
                         </p>
                     </section>
 
                     <section>
-                        <h2 style={{ color: '#fff', fontSize: '1.5rem', marginBottom: '1rem', fontWeight: '700' }}>6. Contact</h2>
+                        <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>6. Contact</h2>
                         <p>
                             Questions about these terms should be sent to <strong>support@astraclient.in</strong>.
                         </p>
                     </section>
 
-                </div>
+                </motion.div>
             </div>
         </div>
     );
