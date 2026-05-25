@@ -1,7 +1,6 @@
 import React from 'react';
 import { Github, Twitter, Linkedin, Code2, Server, Coffee, ShieldCheck, Cpu, Layout, Brush, Users, MessageSquare } from 'lucide-react';
 
-// Actual Astra Client Team Roster Data
 const teamRoster = [
     {
         tag: "FOUNDER & LEAD DEVELOPER",
@@ -75,106 +74,96 @@ const teamRoster = [
     }
 ];
 
-// Reusable Massive Detailed Staff Card Component
 const DetailedStaffCard = ({ data, reversed }) => {
     return (
-        <div style={{
-            background: 'linear-gradient(180deg, #10131a 0%, #0a0d14 100%)',
-            borderRadius: '24px',
-            border: '1px solid rgba(255,255,255,0.03)',
-            padding: '4rem',
-            display: 'flex',
-            alignItems: 'center',
-            flexDirection: reversed ? 'row-reverse' : 'row',
-            gap: '6rem',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.5)',
-            marginBottom: '6rem',
-            flexWrap: 'wrap-reverse', // Images drop below on small screens
-            position: 'relative',
-            overflow: 'hidden'
-        }}>
+        <div className={`staff-card ${reversed ? 'reversed' : ''}`}>
 
-            {/* Subtle background glow adapted to their role accent color */}
+            {/* Background Accent Glow */}
             <div style={{
                 position: 'absolute',
-                top: reversed ? '0%' : '100%', left: reversed ? '100%' : '0%',
+                top: '50%', left: '50%',
                 transform: 'translate(-50%, -50%)',
-                width: '600px', height: '600px',
+                width: 'min(500px, 90vw)', height: 'min(500px, 90vw)',
                 background: data.accent,
-                filter: 'blur(250px)', opacity: 0.08,
+                filter: 'blur(200px)', opacity: 0.08,
                 zIndex: 0,
                 pointerEvents: 'none'
             }}></div>
 
             {/* Left Content (Text) */}
-            <div style={{ flex: '1', minWidth: '350px', zIndex: 1 }}>
+            <div style={{ flex: '1', width: '100%', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }} className="staff-card-text-content">
 
-                {/* Tag */}
+                {/* Role Tag */}
                 <span style={{
                     display: 'inline-block',
                     padding: '0.4rem 1.2rem',
                     background: data.bg,
                     color: data.accent,
                     borderRadius: '50px',
-                    fontSize: '0.8rem',
+                    fontSize: '0.75rem',
                     fontWeight: '800',
                     letterSpacing: '1px',
-                    marginBottom: '2rem',
-                    textTransform: 'uppercase'
+                    marginBottom: '1.5rem',
+                    textTransform: 'uppercase',
+                    border: `1px solid rgba(255,255,255,0.02)`
                 }}>
                     {data.tag}
                 </span>
 
-                {/* Identifiers */}
-                <h2 style={{ fontSize: '3.5rem', fontWeight: '800', marginBottom: '0.5rem', color: 'var(--text-main)', letterSpacing: '-0.02em', lineHeight: '1.2' }}>
+                {/* Name & Sub-Role */}
+                <h2 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.2rem)', fontWeight: '800', marginBottom: '0.5rem', color: 'var(--text-main)', letterSpacing: '-0.02em', lineHeight: '1.2' }}>
                     {data.name}
                 </h2>
 
-                <h3 style={{ fontSize: '1rem', fontWeight: '600', color: '#94a3b8', letterSpacing: '2px', marginBottom: '2.5rem', textTransform: 'uppercase' }}>
+                <h3 style={{ fontSize: '0.9rem', fontWeight: '600', color: 'var(--text-muted)', letterSpacing: '2px', marginBottom: '2rem', textTransform: 'uppercase' }}>
                     {data.subRole}
                 </h3>
 
-                {/* Description Text */}
-                <p style={{ color: '#94a3b8', fontSize: '1.15rem', lineHeight: '1.8', marginBottom: '3rem', maxWidth: '500px' }}>
+                {/* Bio Description */}
+                <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: '1.7', marginBottom: '2.5rem', maxWidth: '520px' }}>
                     {data.description}
                 </p>
 
-                {/* Skill Pills */}
-                <div style={{ display: 'flex', gap: '1rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
+                {/* Skill Badges */}
+                <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '2.5rem', flexWrap: 'wrap' }}>
                     {data.skills.map((skill, i) => (
                         <div key={i} style={{
-                            display: 'flex', alignItems: 'center', gap: '0.5rem',
-                            padding: '0.6rem 1.2rem',
-                            background: data.bg,
-                            border: `1px solid ${data.bg} `,
-                            borderRadius: '12px',
-                            color: data.accent,
+                            display: 'flex', alignItems: 'center', gap: '0.4rem',
+                            padding: '0.5rem 1rem',
+                            background: 'rgba(255, 255, 255, 0.02)',
+                            border: '1px solid rgba(255, 255, 255, 0.05)',
+                            borderRadius: '10px',
+                            color: '#e2e8f0',
                             fontWeight: '600',
-                            fontSize: '0.9rem'
+                            fontSize: '0.85rem'
                         }}>
-                            {skill.icon} {skill.name}
+                            <span style={{ color: data.accent, display: 'inline-flex', alignItems: 'center' }}>{skill.icon}</span> {skill.name}
                         </div>
                     ))}
                 </div>
 
-                {/* Socials Menu */}
-                <div style={{ display: 'flex', gap: '2rem' }}>
+                {/* Social links */}
+                <div style={{ display: 'flex', gap: '1.25rem' }}>
                     {data.socials.map((social, i) => (
                         <a key={i} href={social.link} target="_blank" rel="noopener noreferrer" style={{
-                            color: '#64748b', transition: 'all 0.2s',
+                            color: 'var(--text-muted)',
                             display: 'flex', alignItems: 'center', justifyContent: 'center',
-                            width: '40px', height: '40px', borderRadius: '50%',
-                            background: 'rgba(255,255,255,0.03)'
+                            width: '42px', height: '42px', borderRadius: '12px',
+                            background: 'rgba(255,255,255,0.03)',
+                            border: '1px solid rgba(255,255,255,0.05)',
+                            transition: 'all 0.25s ease'
                         }}
                             onMouseOver={(e) => {
                                 e.currentTarget.style.color = '#fff';
                                 e.currentTarget.style.background = data.accent;
+                                e.currentTarget.style.borderColor = data.accent;
                                 e.currentTarget.style.transform = 'translateY(-3px)';
-                                e.currentTarget.style.boxShadow = `0 10px 20px ${data.bg} `;
+                                e.currentTarget.style.boxShadow = `0 8px 16px ${data.bg} `;
                             }}
                             onMouseOut={(e) => {
-                                e.currentTarget.style.color = '#64748b';
+                                e.currentTarget.style.color = 'var(--text-muted)';
                                 e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
+                                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)';
                                 e.currentTarget.style.transform = 'translateY(0)';
                                 e.currentTarget.style.boxShadow = 'none';
                             }}>
@@ -184,72 +173,43 @@ const DetailedStaffCard = ({ data, reversed }) => {
                 </div>
             </div>
 
-            {/* Right Side: 3D Model inside clean glass box */}
-            <div style={{ flex: '1', minWidth: '350px', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+            {/* Right Side: Minecraft Head 3D Model inside clean glass box */}
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', zIndex: 1, width: '100%', maxWidth: '320px' }}>
+                <div className="staff-card-avatar-box">
+                    {/* Glowing highlight inside avatar container */}
+                    <div style={{
+                        position: 'absolute',
+                        bottom: 0, left: 0, right: 0, height: '40%',
+                        background: `linear-gradient(to top, ${data.bg}, transparent)`,
+                        zIndex: 0,
+                        pointerEvents: 'none'
+                    }}></div>
 
-                {/* The vertical rounded container */}
-                <div style={{
-                    width: '100%',
-                    maxWidth: '340px',
-                    aspectRatio: '3/4.5',
-                    background: `linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.2) 100%)`,
-                    backgroundColor: 'rgba(15, 18, 25, 0.8)',
-                    borderRadius: '35px',
-                    border: `1px solid rgba(255,255,255,0.05)`,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    boxShadow: `0 20px 40px rgba(0,0,0,0.5), inset 0 0 0 1px ${data.bg}`,
-                    position: 'relative',
-                    overflow: 'hidden', // Cleanly cut off at the edges like the screenshot
-                    transition: 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-                }}
-                    onMouseOver={(e) => {
-                        e.currentTarget.style.transform = 'translateY(-10px)';
-                        e.currentTarget.style.boxShadow = `0 30px 50px rgba(0,0,0,0.6), inset 0 0 0 1px ${data.accent}`;
-                        const img = e.currentTarget.querySelector('img');
-                        if (img) img.style.transform = 'scale(1.08)';
-                    }}
-                    onMouseOut={(e) => {
-                        e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.boxShadow = `0 20px 40px rgba(0,0,0,0.5), inset 0 0 0 1px ${data.bg}`;
-                        const img = e.currentTarget.querySelector('img');
-                        if (img) img.style.transform = 'scale(1)';
-                    }}>
-
-                    {/* The massive 3D standing model */}
                     <img
                         src={`https://mc-heads.net/body/${data.mcUsername}/512.png`}
                         alt={data.name}
-                        style={{
-                            height: '110%',
-                            objectFit: 'contain',
-                            imageRendering: 'pixelated',
-                            filter: 'drop-shadow(0 20px 20px rgba(0,0,0,0.8))',
-                            transition: 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-                            transformOrigin: 'bottom center'
-                        }}
+                        className="staff-card-avatar-img"
+                        style={{ zIndex: 1 }}
                         onError={(e) => {
                             e.target.src = 'https://mc-heads.net/body/Steve/512.png';
                         }}
                     />
-                </div >
-
-            </div >
-        </div >
+                </div>
+            </div>
+        </div>
     );
 };
 
 const TeamPage = () => {
     return (
-        <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--bg-darker)' }}>
+        <div style={{ paddingTop: '120px', minHeight: '100vh', backgroundColor: 'var(--bg-darker)' }}>
 
             {/* Header Section */}
-            <section style={{ textAlign: 'center', marginBottom: '4rem', position: 'relative' }}>
+            <section style={{ textAlign: 'center', marginBottom: '4rem', position: 'relative' }} className="animate-fade-in-up">
                 <div style={{
                     position: 'absolute',
                     top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-                    width: '400px', height: '150px',
+                    width: 'min(400px, 80vw)', height: '150px',
                     background: 'var(--primary)',
                     filter: 'blur(120px)', opacity: 0.15,
                     pointerEvents: 'none',
@@ -257,17 +217,17 @@ const TeamPage = () => {
                 }}></div>
 
                 <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-                    <h1 style={{ fontSize: '4rem', fontWeight: '800', marginBottom: '1rem', letterSpacing: '-1px' }}>
-                        Meet the <span style={{ color: 'var(--primary)' }}>Team</span>
+                    <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: '900', marginBottom: '1rem', letterSpacing: '-1px' }}>
+                        Meet the <span className="text-gradient">Team</span>
                     </h1>
-                    <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto' }}>
+                    <p style={{ color: 'var(--text-muted)', fontSize: 'clamp(1rem, 2vw, 1.2rem)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
                         The passionate individuals crafting the ultimate Minecraft launch experience.
                     </p>
                 </div>
             </section>
 
-            {/* Main Content Area - All members get massive detailed cards */}
-            <section className="container" style={{ paddingBottom: '6rem' }}>
+            {/* Main Content Area - All members get detailed responsive cards */}
+            <section className="container animate-fade-in-up delay-100" style={{ paddingBottom: '6rem' }}>
                 {teamRoster.map((member, idx) => (
                     <DetailedStaffCard key={idx} data={member} reversed={idx % 2 !== 0} />
                 ))}

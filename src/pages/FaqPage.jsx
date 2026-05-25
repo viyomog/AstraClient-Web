@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, MessageSquare } from 'lucide-react';
 
 const faqs = [
     {
@@ -30,52 +30,45 @@ const faqs = [
 
 const FAQItem = ({ faq, isOpen, onClick }) => {
     return (
-        <div
-            style={{
-                background: isOpen ? 'rgba(30, 35, 45, 0.8)' : 'var(--bg-card)',
-                border: `1px solid ${isOpen ? 'rgba(134, 64, 239, 0.3)' : 'rgba(255, 255, 255, 0.05)'}`,
-                borderRadius: '16px',
-                marginBottom: '1rem',
-                overflow: 'hidden',
-                transition: 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)'
-            }}
-        >
+        <div className={`faq-accordion-item ${isOpen ? 'open' : ''}`}>
             <button
                 onClick={onClick}
                 style={{
                     width: '100%',
-                    padding: '1.5rem 2rem',
+                    padding: '1.25rem 1.75rem',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
                     background: 'transparent',
                     border: 'none',
                     color: 'var(--text-main)',
-                    fontSize: '1.15rem',
+                    fontSize: 'clamp(1rem, 2vw, 1.125rem)',
                     fontWeight: '600',
                     cursor: 'pointer',
-                    textAlign: 'left'
+                    textAlign: 'left',
+                    gap: '1rem'
                 }}
             >
                 {faq.question}
                 <div style={{
                     transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                    transition: 'transform 0.3s ease',
-                    color: isOpen ? 'var(--primary)' : 'var(--text-muted)'
+                    transition: 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    color: isOpen ? 'var(--primary-hover)' : 'var(--text-muted)',
+                    flexShrink: 0
                 }}>
-                    <ChevronDown size={24} />
+                    <ChevronDown size={20} />
                 </div>
             </button>
 
             <div
                 style={{
-                    maxHeight: isOpen ? '500px' : '0',
+                    maxHeight: isOpen ? '300px' : '0',
                     opacity: isOpen ? 1 : 0,
-                    padding: isOpen ? '0 2rem 1.5rem 2rem' : '0 2rem',
-                    color: '#94a3b8',
+                    padding: isOpen ? '0 1.75rem 1.25rem 1.75rem' : '0 1.75rem',
+                    color: 'var(--text-muted)',
                     lineHeight: '1.6',
-                    fontSize: '1.05rem',
-                    transition: 'all 0.4s ease',
+                    fontSize: '0.95rem',
+                    transition: 'all 0.3s ease',
                     overflow: 'hidden'
                 }}
             >
@@ -93,14 +86,14 @@ const FAQPage = () => {
     };
 
     return (
-        <div style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--bg-darker)' }}>
+        <div style={{ paddingTop: '120px', minHeight: '100vh', backgroundColor: 'var(--bg-darker)' }}>
 
             {/* Header Section */}
-            <section style={{ textAlign: 'center', marginBottom: '5rem', position: 'relative' }}>
+            <section style={{ textAlign: 'center', marginBottom: '4rem', position: 'relative' }} className="animate-fade-in-up">
                 <div style={{
                     position: 'absolute',
                     top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
-                    width: '500px', height: '150px',
+                    width: 'min(500px, 90vw)', height: '150px',
                     background: 'var(--primary)',
                     filter: 'blur(150px)', opacity: 0.15,
                     pointerEvents: 'none',
@@ -109,31 +102,31 @@ const FAQPage = () => {
 
                 <div className="container" style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <span style={{
-                        color: 'var(--primary)',
+                        color: 'var(--primary-hover)',
                         fontWeight: '800',
-                        fontSize: '0.85rem',
+                        fontSize: '0.8rem',
                         letterSpacing: '2px',
                         textTransform: 'uppercase',
                         display: 'block',
-                        marginBottom: '1rem',
-                        background: 'rgba(134, 64, 239, 0.1)',
-                        padding: '0.4rem 1rem',
+                        marginBottom: '1.25rem',
+                        background: 'rgba(134, 64, 239, 0.08)',
+                        padding: '0.4rem 1.2rem',
                         borderRadius: '50px',
                         border: '1px solid rgba(134, 64, 239, 0.2)'
                     }}>
                         Support
                     </span>
-                    <h1 style={{ fontSize: '3.5rem', fontWeight: '900', marginBottom: '1rem', letterSpacing: '-1px' }}>
-                        Frequently Asked <span style={{ color: 'var(--primary)' }}>Questions</span>
+                    <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 3.5rem)', fontWeight: '900', marginBottom: '1rem', letterSpacing: '-1px' }}>
+                        Frequently Asked <span className="text-gradient">Questions</span>
                     </h1>
-                    <p style={{ color: '#94a3b8', fontSize: '1.15rem', maxWidth: '600px', margin: '0 auto', fontWeight: '400' }}>
+                    <p style={{ color: 'var(--text-muted)', fontSize: 'clamp(1rem, 2vw, 1.15rem)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.6' }}>
                         Everything you need to know about the Astra Client, how it works, and how to get the most out of it.
                     </p>
                 </div>
             </section>
 
             {/* Main FAQ Accordion */}
-            <section className="container" style={{ paddingBottom: '8rem' }}>
+            <section className="container animate-fade-in-up delay-100" style={{ paddingBottom: '8rem' }}>
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                     {faqs.map((faq, index) => (
                         <FAQItem
@@ -149,45 +142,31 @@ const FAQPage = () => {
                 <div style={{
                     marginTop: '5rem',
                     textAlign: 'center',
-                    background: 'rgba(255, 255, 255, 0.02)',
-                    border: '1px solid rgba(255, 255, 255, 0.05)',
+                    background: 'rgba(255, 255, 255, 0.01)',
+                    border: '1px solid var(--border)',
                     borderRadius: '24px',
                     padding: '3rem 2rem',
                     maxWidth: '800px',
-                    margin: '5rem auto 0'
+                    margin: '5rem auto 0',
+                    position: 'relative',
+                    overflow: 'hidden'
                 }}>
-                    <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '1rem' }}>Still have questions?</h3>
-                    <p style={{ color: '#94a3b8', marginBottom: '2rem' }}>
+                    <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '0.75rem' }}>Still have questions?</h3>
+                    <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', fontSize: '0.95rem' }}>
                         Our support team is active on Discord to help you configure your client perfectly.
                     </p>
                     <a
                         href="https://discord.gg/5AEp4bgund"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="btn btn-primary"
                         style={{
-                            background: 'var(--primary)',
-                            color: '#fff',
-                            fontWeight: '600',
-                            fontSize: '1rem',
-                            padding: '0.8rem 2rem',
+                            padding: '0.8rem 2.2rem',
                             borderRadius: '50px',
-                            border: 'none',
-                            textDecoration: 'none',
-                            display: 'inline-block',
-                            cursor: 'pointer',
-                            transition: 'all 0.2s ease',
-                            boxShadow: '0 10px 20px rgba(134, 64, 239, 0.3)'
-                        }}
-                        onMouseOver={(e) => {
-                            e.target.style.transform = 'translateY(-2px)';
-                            e.target.style.boxShadow = '0 15px 25px rgba(134, 64, 239, 0.4)';
-                        }}
-                        onMouseOut={(e) => {
-                            e.target.style.transform = 'translateY(0)';
-                            e.target.style.boxShadow = '0 10px 20px rgba(134, 64, 239, 0.3)';
+                            gap: '0.5rem'
                         }}
                     >
-                        Join our Discord
+                        <MessageSquare size={16} /> Join our Discord
                     </a>
                 </div>
             </section>
