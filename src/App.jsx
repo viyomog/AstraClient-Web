@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Features from './components/Features'
-import DataPrivacy from './components/DataPrivacy'
 import Footer from './components/Footer'
 import FeaturesPage from './pages/FeaturesPage'
 import TeamPage from './pages/TeamPage'
@@ -17,7 +16,6 @@ function HomePage() {
     <main className="flex-grow">
       <Hero />
       <Features />
-      <DataPrivacy />
     </main>
   );
 }
