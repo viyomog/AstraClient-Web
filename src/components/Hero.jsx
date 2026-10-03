@@ -1,26 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Download, Compass } from 'lucide-react';
+import { Compass } from 'lucide-react';
 import astraUI from '../assets/image.png';
 
 const Hero = () => {
-    const [version, setVersion] = useState("Loading...");
-
-    useEffect(() => {
-        fetch('https://api.github.com/repos/viyomog/AstraClient/releases/latest')
-            .then(res => res.json())
-            .then(data => {
-                if (data && data.tag_name) {
-                    setVersion(data.tag_name);
-                } else {
-                    setVersion("v0.6"); // Fallback
-                }
-            })
-            .catch(() => setVersion("v0.6")); // Fallback on error
-    }, []);
-
-    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -53,11 +37,9 @@ const Hero = () => {
             paddingBottom: '4rem'
         }} id="home">
 
-            {/* Background Orbs */}
             <div className="bg-orb bg-orb-1" style={{ top: '-10%', left: '-10%', width: '40vw', height: '40vw' }}></div>
             <div className="bg-orb bg-orb-2" style={{ bottom: '-15%', right: '-15%', width: '50vw', height: '50vw' }}></div>
 
-            {/* Grid Overlay */}
             <div style={{
                 position: 'absolute',
                 top: 0, left: 0, right: 0, bottom: 0,
@@ -76,20 +58,20 @@ const Hero = () => {
                 animate="visible"
                 style={{ textAlign: 'center', position: 'relative', zIndex: 10 }}
             >
-                {/* Release Badge */}
                 <motion.div variants={itemVariants} style={{ display: 'inline-block', marginBottom: '1.5rem' }}>
                     <div style={{
-                        background: 'rgba(134, 64, 239, 0.1)',
-                        border: '1px solid rgba(134, 64, 239, 0.25)',
-                        padding: '0.5rem 1.2rem',
+                        background: 'rgba(134, 64, 239, 0.12)',
+                        border: '1px solid rgba(134, 64, 239, 0.35)',
+                        padding: '0.5rem 1.4rem',
                         borderRadius: '100px',
                         fontSize: '0.85rem',
-                        fontWeight: '600',
+                        fontWeight: '700',
+                        letterSpacing: '0.05em',
                         color: 'var(--primary)',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '0.6rem',
-                        boxShadow: '0 4px 20px rgba(134, 64, 239, 0.1)'
+                        boxShadow: '0 4px 20px rgba(134, 64, 239, 0.15)'
                     }}>
                         <span style={{ 
                             width: '8px', 
@@ -99,15 +81,14 @@ const Hero = () => {
                             display: 'inline-block', 
                             boxShadow: '0 0 10px var(--primary)' 
                         }}></span>
-                        Astra Client {version} is out now
+                        ASTRA CLIENT • DISCONTINUED
                     </div>
                 </motion.div>
 
-                {/* Headline */}
                 <motion.h1 
                     variants={itemVariants}
                     style={{
-                        fontSize: 'clamp(2.2rem, 7vw, 5rem)',
+                        fontSize: 'clamp(2.2rem, 7vw, 4.8rem)',
                         fontWeight: '900',
                         lineHeight: '1.15',
                         marginBottom: '1.5rem',
@@ -115,26 +96,39 @@ const Hero = () => {
                         textShadow: '0 10px 30px rgba(0,0,0,0.4)'
                     }}
                 >
-                    Experience Minecraft <br />
-                    <span className="text-gradient">Redefined.</span>
+                    Astra Client <br />
+                    <span className="text-gradient">Has Been Discontinued.</span>
                 </motion.h1>
 
-                {/* Sub-headline */}
                 <motion.p 
                     variants={itemVariants}
                     style={{
-                        fontSize: 'clamp(1rem, 2.5vw, 1.25rem)',
+                        fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
                         color: 'var(--text-muted)',
-                        maxWidth: '650px',
-                        margin: '0 auto 2.5rem auto',
-                        lineHeight: '1.6',
+                        maxWidth: '680px',
+                        margin: '0 auto 1.5rem auto',
+                        lineHeight: '1.7',
                         padding: '0 1rem'
                     }}
                 >
-                    Unleash the ultimate performance with Astra Client. Featuring state-of-the-art optimization, premium aesthetics, and a flawlessly professional experience.
+                    After an incredible journey, Astra Client is officially discontinued. Development and updates have been stopped for now. Thank you to everyone who downloaded, played, supported, tested, and contributed to Astra Client.
                 </motion.p>
 
-                {/* Action Buttons */}
+                <motion.p 
+                    variants={itemVariants}
+                    style={{
+                        fontSize: 'clamp(0.9rem, 2vw, 1.02rem)',
+                        color: '#94a3b8',
+                        maxWidth: '620px',
+                        margin: '0 auto 2.5rem auto',
+                        lineHeight: '1.6',
+                        padding: '0 1rem',
+                        opacity: 0.85
+                    }}
+                >
+                    The project may return someday if time allows, but there are currently no plans for further development.
+                </motion.p>
+
                 <motion.div 
                     variants={itemVariants}
                     style={{
@@ -145,16 +139,16 @@ const Hero = () => {
                         alignItems: 'center'
                     }}
                 >
-                    <Link to="/download" style={{ textDecoration: 'none' }}>
+                    <a href="#features" style={{ textDecoration: 'none' }}>
                         <motion.button 
                             whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(134, 64, 239, 0.5)" }}
                             whileTap={{ scale: 0.95 }}
                             className="btn btn-primary"
                             style={{ gap: '8px' }}
                         >
-                            <Download size={18} /> Download Client
+                            <Compass size={18} /> Explore Astra
                         </motion.button>
-                    </Link>
+                    </a>
                     <Link to="/features" style={{ textDecoration: 'none' }}>
                         <motion.button 
                             whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.06)' }}
@@ -162,12 +156,11 @@ const Hero = () => {
                             className="btn btn-outline"
                             style={{ gap: '8px' }}
                         >
-                            <Compass size={18} /> View Features
+                            View Project History
                         </motion.button>
                     </Link>
                 </motion.div>
 
-                {/* 3D Mockup / Dashboard Preview */}
                 <motion.div 
                     variants={itemVariants}
                     initial={{ y: 50, opacity: 0 }}
@@ -187,7 +180,6 @@ const Hero = () => {
                         boxShadow: '0 25px 60px rgba(0,0,0,0.8), 0 0 40px rgba(134, 64, 239, 0.1)'
                     }}
                 >
-                    {/* Mockup Top Bar */}
                     <div style={{
                         height: '36px',
                         background: 'rgba(0,0,0,0.3)',
@@ -203,7 +195,6 @@ const Hero = () => {
                         <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#27c93f' }}></div>
                     </div>
 
-                    {/* Launcher UI Img */}
                     <div style={{ flex: 1, position: 'relative', background: 'var(--bg-card)', overflow: 'hidden' }}>
                         <motion.img 
                             src={astraUI} 

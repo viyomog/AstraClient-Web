@@ -3,7 +3,6 @@ import { Mail, ArrowRight, Disc as Discord } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const ContactPage = () => {
-    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -24,7 +23,6 @@ const ContactPage = () => {
     return (
         <div style={{ paddingTop: 'clamp(100px, 15vh, 140px)', minHeight: '100vh', backgroundColor: 'var(--bg-darker)', paddingBottom: '4rem', overflow: 'hidden' }}>
 
-            {/* Header Section */}
             <section style={{ textAlign: 'center', marginBottom: '3rem', position: 'relative' }}>
                 <div style={{
                     position: 'absolute',
@@ -48,13 +46,13 @@ const ContactPage = () => {
                             textTransform: 'uppercase',
                             display: 'block',
                             marginBottom: '1rem',
-                            background: 'rgba(134, 64, 239, 0.1)',
+                            background: 'rgba(124, 58, 237, 0.1)',
                             padding: '0.4rem 1.2rem',
                             borderRadius: '50px',
-                            border: '1px solid rgba(134, 64, 239, 0.2)'
+                            border: '1px solid rgba(124, 58, 237, 0.2)'
                         }}
                     >
-                        Get in Touch
+                        Archived Project
                     </motion.span>
                     <motion.h1 
                         initial={{ opacity: 0, y: -20 }}
@@ -62,20 +60,19 @@ const ContactPage = () => {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         style={{ fontSize: 'clamp(2.2rem, 6vw, 3.5rem)', fontWeight: '900', marginBottom: '1rem', letterSpacing: '-1px' }}
                     >
-                        Contact <span style={{ color: 'var(--primary)' }}>Astra</span>
+                        Contact & <span style={{ color: 'var(--primary)' }}>Archive</span>
                     </motion.h1>
                     <motion.p 
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        style={{ color: '#94a3b8', fontSize: 'clamp(1rem, 2.5vw, 1.15rem)', maxWidth: '600px', margin: '0 auto', fontWeight: '400', padding: '0 1rem', lineHeight: '1.6' }}
+                        style={{ color: '#94a3b8', fontSize: 'clamp(1rem, 2.5vw, 1.15rem)', maxWidth: '650px', margin: '0 auto', fontWeight: '400', padding: '0 1rem', lineHeight: '1.6' }}
                     >
-                        Need help with your client? Found a bug? Or just want to say hi? We're always here to listen.
+                        Astra Client is no longer actively maintained. You can still reach out through the available community channels, but responses and future development are not guaranteed.
                     </motion.p>
                 </div>
             </section>
 
-            {/* Main Content Split */}
             <motion.section 
                 className="container"
                 variants={containerVariants}
@@ -91,10 +88,8 @@ const ContactPage = () => {
                     margin: '0 auto'
                 }}>
 
-                    {/* Left Side: Contact Methods & Socials */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
-                        {/* Primary Discord Card */}
                         <motion.div 
                             variants={itemVariants}
                             whileHover={{ y: -4, borderColor: 'rgba(88, 101, 242, 0.5)' }}
@@ -116,9 +111,9 @@ const ContactPage = () => {
                             }}>
                                 <Discord size={22} />
                             </div>
-                            <h3 style={{ fontSize: '1.35rem', fontWeight: '800', color: '#fff' }}>Join the Community</h3>
+                            <h3 style={{ fontSize: '1.35rem', fontWeight: '800', color: '#fff' }}>Community Archive</h3>
                             <p style={{ color: '#94a3b8', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                                The fastest way to get support is through our official Discord server. Our staff and community members are active 24/7.
+                                Connect with past players and community members on Discord. Note that active technical support and customer assistance are discontinued.
                             </p>
                             <a
                                 href="https://discord.gg/5AEp4bgund"
@@ -130,14 +125,13 @@ const ContactPage = () => {
                                     fontSize: '0.95rem'
                                 }}
                             >
-                                Open Discord <ArrowRight size={14} />
+                                Community Archive <ArrowRight size={14} />
                             </a>
                         </motion.div>
 
-                        {/* Secondary Business Email Card */}
                         <motion.div 
                             variants={itemVariants}
-                            whileHover={{ y: -4, borderColor: 'rgba(134, 64, 239, 0.3)' }}
+                            whileHover={{ y: -4, borderColor: 'rgba(124, 58, 237, 0.3)' }}
                             style={{
                                 background: 'var(--bg-card)',
                                 border: '1px solid rgba(255, 255, 255, 0.04)',
@@ -156,9 +150,9 @@ const ContactPage = () => {
                             }}>
                                 <Mail size={22} />
                             </div>
-                            <h3 style={{ fontSize: '1.35rem', fontWeight: '800', color: '#fff' }}>Business Inquiries</h3>
+                            <h3 style={{ fontSize: '1.35rem', fontWeight: '800', color: '#fff' }}>Project Inquiries</h3>
                             <p style={{ color: '#94a3b8', lineHeight: '1.6', fontSize: '0.95rem' }}>
-                                For partnerships, sponsorships, or serious business inquiries, please reach out via email.
+                                For legacy archive matters or general inquiries, you may reach out via email. Responses are not guaranteed.
                             </p>
                             <a
                                 href="mailto:support@astraclient.in"
@@ -173,7 +167,6 @@ const ContactPage = () => {
                         </motion.div>
                     </div>
 
-                    {/* Right Side: Direct Message Form */}
                     <motion.div 
                         variants={itemVariants}
                         style={{
@@ -186,15 +179,14 @@ const ContactPage = () => {
                             boxShadow: '0 15px 35px rgba(0,0,0,0.3)'
                         }}
                     >
-                        {/* Decorative glow inside form */}
                         <div style={{
                             position: 'absolute', top: '-100px', right: '-100px',
                             width: '200px', height: '200px', background: 'var(--primary)',
                             filter: 'blur(100px)', opacity: 0.08, pointerEvents: 'none'
                         }}></div>
 
-                        <h2 style={{ fontSize: '1.75rem', fontWeight: '800', marginBottom: '0.4rem' }}>Send a Message</h2>
-                        <p style={{ color: '#94a3b8', marginBottom: '2rem', fontSize: '0.95rem' }}>Fill out the form below and we'll get back to you.</p>
+                        <h2 style={{ fontSize: '1.75rem', fontWeight: '800', marginBottom: '0.4rem' }}>Send an Inquiry</h2>
+                        <p style={{ color: '#94a3b8', marginBottom: '2rem', fontSize: '0.95rem' }}>Astra Client is archived. Responses and future development are not guaranteed.</p>
 
                         <form style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                             <div className="contact-grid">
@@ -202,7 +194,7 @@ const ContactPage = () => {
                                     <label className="form-label">Your Name</label>
                                     <input
                                         type="text"
-                                        placeholder="Steve"
+                                        placeholder="Name"
                                         className="form-input"
                                     />
                                 </div>
@@ -210,7 +202,7 @@ const ContactPage = () => {
                                     <label className="form-label">Email Address</label>
                                     <input
                                         type="email"
-                                        placeholder="steve@minecraft.net"
+                                        placeholder="email@example.com"
                                         className="form-input"
                                     />
                                 </div>
@@ -223,9 +215,8 @@ const ContactPage = () => {
                                         className="form-input"
                                         style={{ cursor: 'pointer', appearance: 'none' }}
                                     >
-                                        <option value="support">General Support</option>
-                                        <option value="bug">Bug Report</option>
-                                        <option value="business">Business Inquiry</option>
+                                        <option value="inquiry">General Inquiry</option>
+                                        <option value="archive">Archive Question</option>
                                         <option value="other">Other</option>
                                     </select>
                                     <div style={{
@@ -239,7 +230,7 @@ const ContactPage = () => {
                                 <label className="form-label">Message</label>
                                 <textarea
                                     rows="5"
-                                    placeholder="How can we help you today?"
+                                    placeholder="Your message or inquiry..."
                                     className="form-input"
                                     style={{ resize: 'vertical', fontFamily: 'inherit' }}
                                 ></textarea>
@@ -247,7 +238,7 @@ const ContactPage = () => {
 
                             <motion.button
                                 type="button"
-                                whileHover={{ scale: 1.02, boxShadow: '0 10px 25px rgba(134, 64, 239, 0.45)' }}
+                                whileHover={{ scale: 1.02, boxShadow: '0 10px 25px rgba(124, 58, 237, 0.45)' }}
                                 whileTap={{ scale: 0.98 }}
                                 className="btn btn-primary"
                                 style={{
@@ -256,7 +247,7 @@ const ContactPage = () => {
                                     marginTop: '0.5rem'
                                 }}
                             >
-                                Send Message
+                                Send Inquiry
                             </motion.button>
                         </form>
                     </motion.div>

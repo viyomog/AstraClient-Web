@@ -22,11 +22,10 @@ const TermsPage = () => {
                         transition={{ duration: 0.5, delay: 0.15 }}
                         style={{ color: '#94a3b8' }}
                     >
-                        Last Updated: March 01, 2026
+                        Archived • Last Updated: October 2026
                     </motion.p>
                 </header>
 
-                {/* Content */}
                 <motion.div 
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -37,7 +36,7 @@ const TermsPage = () => {
                     <section style={{ marginBottom: '2.5rem' }}>
                         <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>1. Acceptance of Terms</h2>
                         <p>
-                            By downloading, installing, or using Astra Client, you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the software.
+                            Astra Client is an officially discontinued and archived project. By accessing this website or using any past Astra Client software, you agree to these Terms of Service.
                         </p>
                     </section>
 

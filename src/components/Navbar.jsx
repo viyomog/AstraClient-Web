@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import logo from '../assets/logo.png';
 
 const Navbar = () => {
@@ -9,7 +9,6 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
 
-    // Handle scroll effect for glass navbar
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 20) {
@@ -23,7 +22,6 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Close mobile menu when route changes
     useEffect(() => {
         setIsOpen(false);
     }, [location]);
@@ -58,7 +56,6 @@ const Navbar = () => {
             >
                 <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     
-                    {/* Brand Logo */}
                     <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', textDecoration: 'none' }}>
                         <motion.div 
                             whileHover={{ scale: 1.05, rotate: 5 }}
@@ -95,9 +92,26 @@ const Navbar = () => {
                                 fontWeight: '500',
                             }}>Client</span>
                         </span>
+
+                        <span style={{
+                            fontSize: '0.62rem',
+                            fontWeight: '700',
+                            letterSpacing: '0.08em',
+                            textTransform: 'uppercase',
+                            padding: '0.2rem 0.5rem',
+                            borderRadius: '6px',
+                            background: 'rgba(168, 85, 247, 0.12)',
+                            border: '1px solid rgba(168, 85, 247, 0.3)',
+                            color: '#d8b4fe',
+                            marginLeft: '0.5rem',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            lineHeight: 1
+                        }}>
+                            DISCONTINUED
+                        </span>
                     </Link>
 
-                    {/* Desktop Navigation Links */}
                     <div style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }} className="md-flex">
                         {navLinks.map((link) => {
                             const isActive = location.pathname === link.path;
@@ -135,20 +149,7 @@ const Navbar = () => {
                         })}
                     </div>
 
-                    {/* Download Button (Desktop) & Hamburger Button (Mobile) */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                        <Link to="/download" className="md-flex" style={{ textDecoration: 'none' }}>
-                            <motion.button 
-                                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(134, 64, 239, 0.6)" }}
-                                whileTap={{ scale: 0.95 }}
-                                className="btn btn-primary" 
-                                style={{ padding: '0.6rem 1.4rem', fontSize: '0.9rem', borderRadius: '8px' }}
-                            >
-                                <Download size={14} style={{ marginRight: '6px' }} /> Download
-                            </motion.button>
-                        </Link>
-
-                        {/* Hamburger Button */}
                         <button 
                             className="mobile-menu-btn" 
                             onClick={() => setIsOpen(!isOpen)}
@@ -161,11 +162,9 @@ const Navbar = () => {
                 </div>
             </motion.nav>
 
-            {/* Mobile Navigation Drawer */}
             <AnimatePresence>
                 {isOpen && (
                     <>
-                        {/* Dark backdrop overlay */}
                         <motion.div 
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -181,7 +180,6 @@ const Navbar = () => {
                             }}
                         />
 
-                        {/* Drawer body */}
                         <motion.div 
                             initial={{ x: '100%' }}
                             animate={{ x: 0 }}
@@ -226,18 +224,6 @@ const Navbar = () => {
                                         </Link>
                                     );
                                 })}
-                            </div>
-
-                            <div style={{ marginTop: 'auto' }}>
-                                <Link to="/download" style={{ textDecoration: 'none' }}>
-                                    <motion.button 
-                                        whileTap={{ scale: 0.95 }}
-                                        className="btn btn-primary" 
-                                        style={{ width: '100%', padding: '0.9rem', borderRadius: '12px', fontSize: '1rem' }}
-                                    >
-                                        <Download size={18} style={{ marginRight: '8px' }} /> Download Client
-                                    </motion.button>
-                                </Link>
                             </div>
                         </motion.div>
                     </>

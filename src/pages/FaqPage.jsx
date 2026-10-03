@@ -4,28 +4,28 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
     {
-        question: "Is Astra Client free to use?",
-        answer: "Yes, Astra Client is completely free to download and use. We believe in providing a premium, optimized Minecraft experience for everyone."
+        question: "Is Astra Client still being developed?",
+        answer: "No. Astra Client has officially been discontinued and is no longer receiving active development or updates."
     },
     {
-        question: "Will I get banned on servers for using Astra Client?",
-        answer: "No. Astra Client only includes utility and performance mods that are generally accepted by most major Minecraft servers. However, we always recommend checking the rules of specific servers you join, as some competitive servers may restrict certain HUD elements or mods."
+        question: "Will Astra Client return?",
+        answer: "There are currently no plans for active development. If time allows in the future, Astra Client may return, but there is no confirmed return date."
     },
     {
-        question: "How much FPS increase can I expect?",
-        answer: "FPS increases vary wildly depending on your hardware. Players on lower-end systems often see a massive 2x to 3x increase in frame rates, while higher-end setups will experience more stable frame times, reduced stuttering, and smoother gameplay overall."
+        question: "Can I still download Astra Client?",
+        answer: "Astra Client is no longer available as an actively supported download. The website is now an archive of the project and its development journey."
     },
     {
-        question: "Can I use custom mods with Astra Client?",
-        answer: "To ensure maximum stability, security, and performance, Astra Client acts as a closed ecosystem. You cannot drag and drop external mods into the client. However, we continuously listen to community feedback and regularly add highly requested, optimized mods to our official roster."
+        question: "Why was Astra Client discontinued?",
+        answer: "Development was discontinued due to time, priorities, and the practical difficulty of continuing to maintain the project. This decision allows the project to remain archived rather than continue without consistent development and support."
     },
     {
-        question: "Does Astra Client support macOS or Linux?",
-        answer: "Currently, our main focus is providing the ultimate experience for Windows users. Support for macOS and Linux is on our long-term roadmap as we continue to grow."
+        question: "Will the Discord community remain?",
+        answer: "The community can remain as a place for existing users and people who were part of the Astra Client journey."
     },
     {
-        question: "How do I install custom capes or cosmetics?",
-        answer: "You can link your Minecraft account and equip free/premium cosmetics through the Astra Client website dashboard. Once equipped on the site, they will automatically sync and appear instantly in-game to all other Astra Client users."
+        question: "How did Astra Client achieve high FPS?",
+        answer: "During its development, Astra Client leveraged tailored Java garbage collection optimizations, thread allocation tuning, and custom rendering pipelines to maximize FPS and deliver consistent frametimes."
     }
 ];
 
@@ -37,11 +37,11 @@ const FAQItem = ({ faq, isOpen, onClick, index }) => {
             transition={{ duration: 0.4, delay: index * 0.05 }}
             style={{
                 background: isOpen ? 'rgba(30, 35, 45, 0.7)' : 'var(--bg-card)',
-                border: `1px solid ${isOpen ? 'rgba(134, 64, 239, 0.35)' : 'rgba(255, 255, 255, 0.04)'}`,
+                border: `1px solid ${isOpen ? 'rgba(124, 58, 237, 0.35)' : 'rgba(255, 255, 255, 0.04)'}`,
                 borderRadius: '16px',
                 marginBottom: '1rem',
                 overflow: 'hidden',
-                boxShadow: isOpen ? '0 10px 30px rgba(134, 64, 239, 0.06)' : 'none',
+                boxShadow: isOpen ? '0 10px 30px rgba(124, 58, 237, 0.06)' : 'none',
                 transition: 'background-color 0.3s, border-color 0.3s'
             }}
         >
@@ -104,7 +104,7 @@ const FAQItem = ({ faq, isOpen, onClick, index }) => {
 };
 
 const FAQPage = () => {
-    const [openIndex, setOpenIndex] = useState(0); // The first item is open by default
+    const [openIndex, setOpenIndex] = useState(0);
 
     const toggleFaq = (index) => {
         setOpenIndex(openIndex === index ? -1 : index);
@@ -113,7 +113,6 @@ const FAQPage = () => {
     return (
         <div style={{ paddingTop: 'clamp(100px, 15vh, 140px)', minHeight: '100vh', backgroundColor: 'var(--bg-darker)', paddingBottom: '4rem', overflow: 'hidden' }}>
 
-            {/* Header Section */}
             <section style={{ textAlign: 'center', marginBottom: '3rem', position: 'relative' }}>
                 <div style={{
                     position: 'absolute',
@@ -137,13 +136,13 @@ const FAQPage = () => {
                             textTransform: 'uppercase',
                             display: 'block',
                             marginBottom: '1rem',
-                            background: 'rgba(134, 64, 239, 0.1)',
+                            background: 'rgba(124, 58, 237, 0.1)',
                             padding: '0.4rem 1.2rem',
                             borderRadius: '50px',
-                            border: '1px solid rgba(134, 64, 239, 0.2)'
+                            border: '1px solid rgba(124, 58, 237, 0.2)'
                         }}
                     >
-                        Support
+                        Project FAQ
                     </motion.span>
                     <motion.h1 
                         initial={{ opacity: 0, y: -20 }}
@@ -159,12 +158,11 @@ const FAQPage = () => {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         style={{ color: '#94a3b8', fontSize: 'clamp(1rem, 2.5vw, 1.15rem)', maxWidth: '600px', margin: '0 auto', fontWeight: '400', padding: '0 1rem', lineHeight: '1.6' }}
                     >
-                        Everything you need to know about the Astra Client, how it works, and how to get the most out of it.
+                        Information regarding the project's current discontinued status, development history, and future outlook.
                     </motion.p>
                 </div>
             </section>
 
-            {/* Main FAQ Accordion */}
             <section className="container">
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                     {faqs.map((faq, index) => (
@@ -178,7 +176,6 @@ const FAQPage = () => {
                     ))}
                 </div>
 
-                {/* Contact CTA */}
                 <motion.div 
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -196,9 +193,9 @@ const FAQPage = () => {
                         boxShadow: '0 15px 35px rgba(0,0,0,0.3)'
                     }}
                 >
-                    <h3 style={{ fontSize: 'clamp(1.2rem, 3vw, 1.5rem)', fontWeight: '700', marginBottom: '0.8rem' }}>Still have questions?</h3>
+                    <h3 style={{ fontSize: 'clamp(1.2rem, 3vw, 1.5rem)', fontWeight: '700', marginBottom: '0.8rem' }}>Community Questions</h3>
                     <p style={{ color: '#94a3b8', marginBottom: '2rem', fontSize: '0.95rem' }}>
-                        Our support team is active on Discord to help you configure your client perfectly.
+                        Astra Client is officially discontinued and active support is no longer provided. You can still visit the community archive.
                     </p>
                     <a
                         href="https://discord.gg/5AEp4bgund"
@@ -207,12 +204,12 @@ const FAQPage = () => {
                         style={{ textDecoration: 'none', display: 'inline-block' }}
                     >
                         <motion.button
-                            whileHover={{ scale: 1.05, boxShadow: '0 12px 25px rgba(134, 64, 239, 0.45)' }}
+                            whileHover={{ scale: 1.05, boxShadow: '0 12px 25px rgba(124, 58, 237, 0.45)' }}
                             whileTap={{ scale: 0.95 }}
                             className="btn btn-primary"
                             style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '0.8rem 2rem', borderRadius: '50px' }}
                         >
-                            <MessageSquare size={18} /> Join our Discord
+                            <MessageSquare size={18} /> Community Archive
                         </motion.button>
                     </a>
                 </motion.div>

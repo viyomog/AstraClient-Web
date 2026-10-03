@@ -6,37 +6,37 @@ const Features = () => {
     const featureList = [
         {
             title: "Hyper Optimized",
-            desc: "Engineered from the ground up for maximum FPS and lowest latency. Enjoy Minecraft like never before.",
+            desc: "Engineered from the ground up for maximum FPS and lowest latency. Bringing performance-first optimizations to Minecraft.",
             icon: <Zap size={24} />
         },
         {
             title: "Premium Cosmetics",
-            desc: "Stand out with exclusive, high-quality capes, wings, and cosmetics built directly into the client.",
+            desc: "Stand out with exclusive, high-quality capes, wings, and cosmetics integrated into the client.",
             icon: <Sparkles size={24} />
         },
         {
             title: "Clean Interface",
-            desc: "A stunning, professional UI that doesn't get in your way. Customize everything to your liking.",
+            desc: "A stunning, professional UI that doesn't get in your way. Designed with dark aesthetics and smooth interactions.",
             icon: <Paintbrush size={24} />
         },
         {
             title: "Built-in Share",
-            desc: "Seamlessly share your gameplay directly from the client without tanking your performance.",
+            desc: "Seamlessly capture and share your gameplay highlights without sacrificing in-game performance.",
             icon: <MonitorPlay size={24} />
         },
         {
-            title: "Advanced Anticheat",
-            desc: "Play on our partnered servers with the confidence of our state-of-the-art anticheat integration.",
+            title: "Anticheat Integration",
+            desc: "Engineered with integrated anticheat compatibility for multiplayer performance on supported servers.",
             icon: <Shield size={24} />
         },
         {
-            title: "Constant Updates",
-            desc: "Our dedicated team works around the clock to bring you the latest features and optimizations.",
+            title: "Engineered Architecture",
+            desc: "Crafted through iterations of performance improvements, UI enhancements, and refined client optimizations.",
             icon: <Rocket size={24} />
         },
         {
             title: "Astra AI Companion",
-            desc: "Get instant Minecraft knowledge, recipe info, and building advice on the fly without tabbing out of the game.",
+            desc: "Instant Minecraft knowledge, recipe info, and building advice without tabbing out of the game.",
             icon: <Brain size={24} />
         },
         {
@@ -46,7 +46,6 @@ const Features = () => {
         }
     ];
 
-    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -76,16 +75,16 @@ const Features = () => {
                     style={{ textAlign: 'center', marginBottom: '5rem' }}
                 >
                     <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: '800', marginBottom: '1.5rem', letterSpacing: '-1px' }}>
-                        Why Choose <span style={{
+                        Built for the <span style={{
                             background: 'linear-gradient(135deg, var(--primary), #d946ef)',
                             WebkitBackgroundClip: 'text',
                             backgroundClip: 'text',
                             color: 'transparent',
                             textShadow: '0 0 40px rgba(134, 64, 239, 0.3)'
-                        }}>Astra Client?</span>
+                        }}>Journey</span>
                     </h2>
                     <p style={{ color: 'var(--text-muted)', fontSize: 'clamp(1rem, 2vw, 1.15rem)', maxWidth: '600px', margin: '0 auto', lineHeight: '1.8', padding: '0 1rem' }}>
-                        We've stripped away the bloat and focused intensely on what matters: pure, unadulterated performance wrapped in a premium design.
+                        These were some of the features that defined Astra Client during its development.
                     </p>
                 </motion.div>
 
@@ -122,7 +121,6 @@ const Features = () => {
                                 cursor: 'pointer'
                             }}
                         >
-                            {/* Ambient Top Glow */}
                             <div style={{
                                 position: 'absolute',
                                 top: 0,

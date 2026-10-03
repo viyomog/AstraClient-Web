@@ -13,7 +13,6 @@ const Footer = () => {
             overflow: 'hidden'
         }}>
 
-            {/* Background glow for footer */}
             <div style={{
                 position: 'absolute',
                 bottom: 0,
@@ -30,18 +29,32 @@ const Footer = () => {
             <div className="container">
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '3rem', marginBottom: '4rem' }}>
 
-                    {/* Brand Col */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
                             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px' }}>
                                 <img src={astraUI} alt="Astra Client Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
                             </div>
-                            <span style={{ fontSize: '1.25rem', fontWeight: '800' }}>AstraClient</span>
+                            <span style={{ fontSize: '1.25rem', fontWeight: '800' }}>Astra Client</span>
                         </div>
-                        <p style={{ color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '1rem', maxWidth: '380px', fontSize: '0.95rem' }}>
-                            The ultimate Minecraft client engineered for unparalleled performance, aesthetics, and professional standards.
+                        <p style={{ color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '0.5rem', maxWidth: '380px', fontSize: '0.95rem' }}>
+                            An archived Minecraft client project.
                         </p>
-                        <div style={{ display: 'flex', gap: '1rem' }}>
+                        <div style={{
+                            display: 'inline-block',
+                            padding: '0.35rem 0.8rem',
+                            borderRadius: '6px',
+                            background: 'rgba(168, 85, 247, 0.1)',
+                            border: '1px solid rgba(168, 85, 247, 0.25)',
+                            color: '#d8b4fe',
+                            fontSize: '0.8rem',
+                            fontWeight: '700',
+                            letterSpacing: '0.05em',
+                            width: 'fit-content',
+                            marginBottom: '0.5rem'
+                        }}>
+                            Officially discontinued • 2026
+                        </div>
+                        <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
                             <motion.a 
                                 href="https://x.com/ViyomOg" 
                                 target="_blank"
@@ -76,24 +89,23 @@ const Footer = () => {
                                     transition: 'color 0.2s'
                                 }}
                             >
-                                Discord
+                                Community
                             </motion.a>
                         </div>
                     </div>
 
-                    {/* Links Cols */}
                     <div>
                         <h4 style={{ color: 'var(--text-main)', fontWeight: '600', marginBottom: '1.5rem', fontSize: '1.05rem' }}>Navigation</h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-                            <a href="https://store.astraclient.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Store</a>
-                            <a href="https://status.astraclient.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Status</a>
+                            <Link to="/" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Home</Link>
+                            <Link to="/features" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Features</Link>
                             <Link to="/benchmarks" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Benchmarks</Link>
-                            <a href="#" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Blog</a>
-                            <Link to="/download" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Download</Link>
+                            <Link to="/team" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Team</Link>
+                            <Link to="/faq" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>FAQ</Link>
+                            <Link to="/contact" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.95rem', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--primary)'} onMouseOut={(e) => e.target.style.color = 'var(--text-muted)'}>Contact</Link>
                         </div>
                     </div>
 
-                    {/* Legal Col */}
                     <div>
                         <h4 style={{ color: 'var(--text-main)', fontWeight: '600', marginBottom: '1.5rem', fontSize: '1.05rem' }}>Legal</h4>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', marginBottom: '1.5rem' }}>
@@ -111,7 +123,7 @@ const Footer = () => {
 
                 <div style={{ borderTop: '1px solid var(--border)', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
                     <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                        © {new Date().getFullYear()} Astra Client. All rights reserved.
+                        © 2026 Astra Client • Officially discontinued • 2026
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
                         <span>Crafted with 💜 by the Astra Team</span>

@@ -36,7 +36,7 @@ const featuresData = [
     },
     {
         title: "Integrated News Feed",
-        desc: "Keep up to date with the latest client updates, community events, and release notes straight from the launcher. A beautifully formatted feed ensures you never miss a beat.",
+        desc: "Kept players up to date with client updates, community notes, and release information straight from the launcher. A beautifully formatted feed built directly into the UI.",
         img: imgNews,
         reversed: false
     },
@@ -49,7 +49,6 @@ const featuresData = [
 ];
 
 const FeaturesPage = () => {
-    // Animation variants
     const rowVariants = {
         hidden: { opacity: 0, y: 40 },
         visible: { 
@@ -62,7 +61,6 @@ const FeaturesPage = () => {
     return (
         <div style={{ paddingTop: 'clamp(100px, 15vh, 140px)', minHeight: '100vh', backgroundColor: 'var(--bg-darker)', paddingBottom: '4rem', overflow: 'hidden' }}>
 
-            {/* Page Header */}
             <section style={{ paddingBottom: '2rem', textAlign: 'center', position: 'relative' }}>
                 <div style={{
                     position: 'absolute',
@@ -79,12 +77,12 @@ const FeaturesPage = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         style={{
                             display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                            padding: '0.5rem 1.2rem', background: 'rgba(134, 64, 239, 0.1)',
-                            border: '1px solid rgba(134, 64, 239, 0.2)', borderRadius: '20px',
+                            padding: '0.5rem 1.2rem', background: 'rgba(124, 58, 237, 0.1)',
+                            border: '1px solid rgba(124, 58, 237, 0.2)', borderRadius: '20px',
                             color: 'var(--primary)', fontWeight: '600', marginBottom: '1.5rem'
                         }}
                     >
-                        <Sparkles size={16} /> Showcase
+                        <Sparkles size={16} /> Archive Showcase
                     </motion.div>
                     
                     <motion.h1 
@@ -93,7 +91,7 @@ const FeaturesPage = () => {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         style={{ fontSize: 'clamp(2.5rem, 7vw, 4rem)', fontWeight: '800', marginBottom: '1rem', letterSpacing: '-1px' }}
                     >
-                        Experience <span style={{
+                        Features of <span style={{
                             background: 'linear-gradient(135deg, var(--primary), #d946ef)',
                             WebkitBackgroundClip: 'text',
                             backgroundClip: 'text',
@@ -107,12 +105,11 @@ const FeaturesPage = () => {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         style={{ color: 'var(--text-muted)', fontSize: 'clamp(1rem, 2.5vw, 1.25rem)', maxWidth: '700px', margin: '0 auto', lineHeight: '1.7', padding: '0 1rem' }}
                     >
-                        Every pixel has been engineered to deliver a flawless, deeply customized experience. Take a detailed look at what makes Astra Client the best choice for Minecraft.
+                        Every pixel was engineered to deliver a focused, deeply customized experience. Explore the features and interface that defined Astra Client during its development journey.
                     </motion.p>
                 </div>
             </section>
 
-            {/* Gallery Grid */}
             <section style={{ paddingTop: '2rem' }}>
                 <div className="container">
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem', paddingBottom: '4rem' }}>
@@ -129,10 +126,7 @@ const FeaturesPage = () => {
                                     flexWrap: 'wrap'
                                 }}
                             >
-
-                                {/* Image Container */}
                                 <div className="feature-page-img-container" style={{ flex: '1.5', minWidth: 'min(100%, 360px)', position: 'relative' }}>
-                                    {/* Ambient glow behind image */}
                                     <div style={{
                                         position: 'absolute',
                                         top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
@@ -146,7 +140,7 @@ const FeaturesPage = () => {
                                         whileHover={{ 
                                             scale: 1.02,
                                             rotateY: item.reversed ? -2 : 2,
-                                            borderColor: 'rgba(134, 64, 239, 0.3)'
+                                            borderColor: 'rgba(124, 58, 237, 0.3)'
                                         }}
                                         style={{
                                             position: 'relative',
@@ -168,7 +162,6 @@ const FeaturesPage = () => {
                                     </motion.div>
                                 </div>
 
-                                {/* Text Content */}
                                 <div style={{ flex: '1', minWidth: '280px' }}>
                                     <h3 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', fontWeight: '800', marginBottom: '1rem', color: 'var(--text-main)', lineHeight: '1.25' }}>
                                         {item.title}

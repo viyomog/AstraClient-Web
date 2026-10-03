@@ -23,10 +23,10 @@ const DataPrivacy = () => {
                         width: '64px', 
                         height: '64px', 
                         borderRadius: '50%', 
-                        background: 'rgba(134, 64, 239, 0.1)', 
+                        background: 'rgba(124, 58, 237, 0.1)', 
                         color: 'var(--primary)', 
                         marginBottom: '1.5rem',
-                        boxShadow: '0 0 25px rgba(134, 64, 239, 0.15)'
+                        boxShadow: '0 0 25px rgba(124, 58, 237, 0.15)'
                     }}
                 >
                     <ShieldCheck size={32} />
@@ -37,12 +37,12 @@ const DataPrivacy = () => {
                 </h2>
                 
                 <p style={{ color: 'var(--text-muted)', fontSize: 'clamp(0.95rem, 2.5vw, 1.1rem)', lineHeight: '1.8', marginBottom: '2rem' }}>
-                    Astra Client requests access to your Microsoft account solely to authenticate your ownership of Minecraft Java Edition. This allows you to securely log in and play on servers without us ever seeing your password. We also collect minimal, anonymous hardware data and crash reports exclusively to improve client performance and fix bugs.
+                    Astra Client was engineered to request access to your Microsoft account solely to authenticate your ownership of Minecraft Java Edition. This allowed players to securely log in and connect to servers without passwords ever being viewed or stored. Minimal anonymous data and technical reports were used solely to analyze client stability.
                 </p>
                 
                 <Link to="/privacy" style={{ textDecoration: 'none' }}>
                     <motion.button 
-                        whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(134, 64, 239, 0.3)" }}
+                        whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(124, 58, 237, 0.3)" }}
                         whileTap={{ scale: 0.95 }}
                         className="btn btn-outline" 
                         style={{ 

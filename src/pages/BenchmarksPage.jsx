@@ -176,7 +176,6 @@ const BenchmarksPage = () => {
 
             <div className="container" style={{ position: 'relative', zIndex: 10 }}>
 
-                {/* Header Section */}
                 <motion.div 
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -186,16 +185,16 @@ const BenchmarksPage = () => {
                     <span style={{
                         color: 'var(--primary)', fontWeight: '800', fontSize: '0.85rem', letterSpacing: '2px',
                         textTransform: 'uppercase', display: 'inline-block', marginBottom: '1rem',
-                        background: 'rgba(134, 64, 239, 0.1)', padding: '0.4rem 1.2rem', borderRadius: '50px',
-                        border: '1px solid rgba(134, 64, 239, 0.2)'
+                        background: 'rgba(124, 58, 237, 0.1)', padding: '0.4rem 1.2rem', borderRadius: '50px',
+                        border: '1px solid rgba(124, 58, 237, 0.2)'
                     }}>
-                        Telemetry Data
+                        Final Release Performance
                     </span>
                     <h1 style={{ fontSize: 'clamp(2.2rem, 7vw, 4rem)', fontWeight: '900', letterSpacing: '-1.5px', marginBottom: '1rem' }}>
-                        Performance <span className="text-gradient">Benchmarks</span>
+                        Final Release <span className="text-gradient">Performance</span>
                     </h1>
                     <p style={{ color: 'var(--text-muted)', fontSize: 'clamp(1rem, 2.5vw, 1.2rem)', maxWidth: '650px', margin: '0 auto', lineHeight: '1.6' }}>
-                        Verified frame analysis and hardware load testing comparison statistics. Verified on Intel Core i7-13700K & RTX 4070.
+                        Performance information from the final available Astra Client release. Verified on Intel Core i7-13700K & RTX 4070 during historical testing.
                     </p>
                 </motion.div>
 
@@ -232,7 +231,7 @@ const BenchmarksPage = () => {
                                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                 flex: '1',
                                 minWidth: '150px',
-                                boxShadow: activeTest === key ? '0 10px 20px rgba(134, 64, 239, 0.3)' : 'none'
+                                boxShadow: activeTest === key ? '0 10px 20px rgba(124, 58, 237, 0.3)' : 'none'
                             }}
                         >
                             {key === 'lobby' && <Layers size={16} style={{ marginRight: '6px', verticalAlign: 'middle' }} />}
@@ -291,7 +290,7 @@ const BenchmarksPage = () => {
                         className="glass-panel" 
                         style={{ padding: '2.5rem 2rem', borderRadius: '24px', position: 'relative', overflow: 'hidden' }}
                     >
-                        <div style={{ position: 'absolute', top: 0, right: 0, width: '100px', height: '100px', background: 'rgba(134, 64, 239, 0.05)', filter: 'blur(30px)', borderRadius: '50%' }}></div>
+                        <div style={{ position: 'absolute', top: 0, right: 0, width: '100px', height: '100px', background: 'rgba(124, 58, 237, 0.05)', filter: 'blur(30px)', borderRadius: '50%' }}></div>
                         <h4 style={{ color: 'var(--text-muted)', fontSize: '0.9rem', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '0.5rem' }}>Average FPS Gain</h4>
                         <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', color: 'var(--primary)' }}>
                             <span style={{ fontSize: '3rem', fontWeight: '900', letterSpacing: '-1.5px' }}>
@@ -426,7 +425,7 @@ const BenchmarksPage = () => {
                                                     y1={padding} 
                                                     x2={astraPoints.points[hoveredIdx].x} 
                                                     y2={chartHeight - padding} 
-                                                    stroke="rgba(134, 64, 239, 0.3)" 
+                                                    stroke="rgba(124, 58, 237, 0.3)" 
                                                     strokeWidth="2" 
                                                     strokeDasharray="4,4"
                                                 />
@@ -465,11 +464,11 @@ const BenchmarksPage = () => {
                                     background: 'rgba(10, 13, 20, 0.9)',
                                     backdropFilter: 'blur(16px)',
                                     WebkitBackdropFilter: 'blur(16px)',
-                                    border: '1px solid rgba(134, 64, 239, 0.25)',
+                                    border: '1px solid rgba(124, 58, 237, 0.25)',
                                     borderRadius: '16px',
                                     padding: '0.85rem 1.1rem',
                                     pointerEvents: 'none',
-                                    boxShadow: '0 12px 30px rgba(134, 64, 239, 0.15)',
+                                    boxShadow: '0 12px 30px rgba(124, 58, 237, 0.15)',
                                     zIndex: 20,
                                     display: 'flex',
                                     flexDirection: 'column',

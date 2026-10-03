@@ -22,11 +22,10 @@ const PrivacyPage = () => {
                         transition={{ duration: 0.5, delay: 0.15 }}
                         style={{ color: '#94a3b8' }}
                     >
-                        Last Updated: March 01, 2026
+                        Archived • Last Updated: October 2026
                     </motion.p>
                 </header>
 
-                {/* Content */}
                 <motion.div 
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -35,25 +34,25 @@ const PrivacyPage = () => {
                 >
 
                     <section style={{ marginBottom: '2.5rem' }}>
-                        <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>1. Information We Collect</h2>
+                        <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>1. Information Collected During Operation</h2>
                         <p>
-                            We value your privacy. Astra Client collects minimal data to improve your experience:
+                            Astra Client is now discontinued. During its active period, the client collected minimal data to support functionality:
                         </p>
                         <ul style={{ paddingLeft: '1.5rem', marginTop: '1rem' }}>
-                            <li><strong>Hardware Data:</strong> Anonymous information about your CPU/GPU to optimize performance.</li>
-                            <li><strong>Crash Reports:</strong> Technical logs sent manually or automatically to fix bugs.</li>
-                            <li><strong>Session Tokens:</strong> Secure Microsoft OAuth tokens required to verify your Minecraft account (we do not see or store your password).</li>
+                            <li><strong>Hardware Data:</strong> Anonymous information about CPU/GPU setups to optimize rendering performance.</li>
+                            <li><strong>Crash Reports:</strong> Technical logs used to diagnose crashes and stability bugs.</li>
+                            <li><strong>Session Tokens:</strong> Secure Microsoft OAuth tokens required to authenticate Minecraft accounts (passwords were never seen or stored).</li>
                         </ul>
                     </section>
 
                     <section style={{ marginBottom: '2.5rem' }}>
-                        <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>2. How We Use Data</h2>
+                        <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>2. How Data Was Used</h2>
                         <p>
-                            Collected data is used solely for:
+                            Collected data was used solely for:
                         </p>
                         <ul style={{ paddingLeft: '1.5rem', marginTop: '1rem' }}>
-                            <li>Performance tuning and optimization.</li>
-                            <li>Critical bug fixing and stability improvements.</li>
+                            <li>Performance analysis and stability optimization during development.</li>
+                            <li>Critical bug fixing and launcher reliability.</li>
                             <li>Verifying cosmetic ownership (e.g., capes).</li>
                         </ul>
                     </section>
@@ -61,21 +60,21 @@ const PrivacyPage = () => {
                     <section style={{ marginBottom: '2.5rem' }}>
                         <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>3. Data Security</h2>
                         <p>
-                            We implement industry-standard security measures to protect your information. We never sell, trade, or share your personal data with third parties for marketing purposes.
+                            Industry-standard security measures were maintained to protect data. Personal data was never sold, traded, or shared with third parties for marketing purposes.
                         </p>
                     </section>
 
                     <section style={{ marginBottom: '2.5rem' }}>
                         <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>4. Third Party Services</h2>
                         <p>
-                            Astra Client interacts with services like Microsoft Azure and GitHub for authentication and updates. Please refer to their respective privacy policies for how they handle your data.
+                            Astra Client interacted with services like Microsoft Azure and GitHub for authentication and release downloads. Refer to their respective privacy policies for how they handle data.
                         </p>
                     </section>
 
                     <section>
-                        <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>5. Your Rights</h2>
+                        <h2 style={{ color: '#fff', fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700' }}>5. Inquiries</h2>
                         <p>
-                            You have the right to request the deletion of any data associated with your linked account. Contact us at <strong>support@astraclient.in</strong> for assistance.
+                            For inquiries regarding past data, you may contact <strong>support@astraclient.in</strong>. Note that active project support has been discontinued.
                         </p>
                     </section>
 

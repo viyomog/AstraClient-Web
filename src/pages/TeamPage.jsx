@@ -2,13 +2,12 @@ import React from 'react';
 import { Github, Twitter, Linkedin, Code2, Server, Coffee, ShieldCheck, Cpu, Layout, Brush, Users, MessageSquare } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-// Actual Astra Client Team Roster Data
 const teamRoster = [
     {
         tag: "FOUNDER & LEAD DEVELOPER",
         name: "Viyom Paliwal",
         subRole: "FULL STACK DEVELOPER",
-        description: "Viyom is a dedicated software engineer with a passion for gaming and performance optimization. He started AstraClient with a vision to provide the Indian gaming community with a premium, optimized, and localized Minecraft experience.",
+        description: "Viyom is a dedicated software engineer with a passion for gaming and performance optimization. He founded Astra Client with a vision to provide the gaming community with a premium, optimized, and localized Minecraft experience.",
         skills: [
             { name: "React & Electron", icon: <Code2 size={16} /> },
             { name: "Node.js Check", icon: <Server size={16} /> },
@@ -20,14 +19,14 @@ const teamRoster = [
             { icon: <Linkedin size={20} />, link: "https://www.linkedin.com/in/viyompaliwal/" }
         ],
         mcUsername: "ViyomOG",
-        accent: "#ef4444", // Red
+        accent: "#ef4444",
         bg: "rgba(220, 38, 38, 0.1)"
     },
     {
         tag: "MANAGER",
         name: "Rajdeep Singh",
         subRole: "CREATIVE LEAD",
-        description: "The architect of aesthetics. Rajdeep blends form and function to create AstraClient's signature visual identity. From pixel-perfect layouts to fluid animations, he ensures the launcher feels as premium as it performs.",
+        description: "The architect of aesthetics. Rajdeep blended form and function to create Astra Client's signature visual identity. From pixel-perfect layouts to fluid animations, he ensured the launcher felt as premium as it performed.",
         skills: [
             { name: "UI/UX Design", icon: <Layout size={16} /> },
             { name: "Figma Wizard", icon: <Brush size={16} /> }
@@ -37,14 +36,14 @@ const teamRoster = [
             { icon: <Linkedin size={20} />, link: "#" }
         ],
         mcUsername: "pxychoOG",
-        accent: "#f59e0b", // Amber
+        accent: "#f59e0b",
         bg: "rgba(245, 158, 11, 0.1)"
     },
     {
         tag: "SOFTWARE TESTER",
         name: "Dikshit Kumar",
         subRole: "QUALITY ASSURANCE",
-        description: "The firewall against bugs. Dikshit pushes AstraClient to its limits, ensuring every release is stable, optimized, and ready for the competitive gaming stage. His rigorous testing guarantees a flawless experience.",
+        description: "The firewall against bugs. Dikshit pushed Astra Client to its limits, ensuring each release was stable, optimized, and ready for competitive gameplay through rigorous testing.",
         skills: [
             { name: "Bug Hunter", icon: <ShieldCheck size={16} /> },
             { name: "Automation", icon: <Cpu size={16} /> }
@@ -55,23 +54,23 @@ const teamRoster = [
             { icon: <Linkedin size={20} />, link: "https://www.linkedin.com/in/dikshit-kumar-252026352/" }
         ],
         mcUsername: "Famada_",
-        accent: "#10b981", // Emerald
+        accent: "#10b981",
         bg: "rgba(16, 185, 129, 0.1)"
     },
     {
         tag: "COMMUNITY MANAGER",
         name: "Somay Yadav",
         subRole: "COMMUNITY LEAD",
-        description: "The voice of the community. Somay ensures every player is heard and every concern addressed. He bridges the gap between the developers and the users, fostering a welcoming and active environment.",
+        description: "The voice of the community. Somay ensured players were heard and concerns addressed, bridging the gap between developers and the community throughout Astra Client's journey.",
         skills: [
             { name: "Community Lead", icon: <Users size={16} /> },
-            { name: "Support", icon: <MessageSquare size={16} /> }
+            { name: "Community Care", icon: <MessageSquare size={16} /> }
         ],
         socials: [
             { icon: <Twitter size={20} />, link: "#" }
         ],
         mcUsername: "PoBoi0425",
-        accent: "#8b5cf6", // Purple
+        accent: "#8b5cf6",
         bg: "rgba(139, 92, 246, 0.1)"
     }
 ];
@@ -240,7 +239,6 @@ const TeamPage = () => {
     return (
         <div style={{ paddingTop: 'clamp(100px, 15vh, 140px)', minHeight: '100vh', backgroundColor: 'var(--bg-darker)', paddingBottom: '4rem', overflow: 'hidden' }}>
 
-            {/* Header Section */}
             <section style={{ textAlign: 'center', marginBottom: '4rem', position: 'relative' }}>
                 <div style={{
                     position: 'absolute',
@@ -253,13 +251,32 @@ const TeamPage = () => {
                 }}></div>
 
                 <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+                    <motion.span 
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        style={{
+                            color: 'var(--primary)',
+                            fontWeight: '800',
+                            fontSize: '0.85rem',
+                            letterSpacing: '2px',
+                            textTransform: 'uppercase',
+                            display: 'inline-block',
+                            marginBottom: '1rem',
+                            background: 'rgba(124, 58, 237, 0.1)',
+                            padding: '0.4rem 1.2rem',
+                            borderRadius: '50px',
+                            border: '1px solid rgba(124, 58, 237, 0.2)'
+                        }}
+                    >
+                        Project Contributors
+                    </motion.span>
                     <motion.h1 
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                         style={{ fontSize: 'clamp(2.5rem, 7vw, 4rem)', fontWeight: '800', marginBottom: '1rem', letterSpacing: '-1px' }}
                     >
-                        Meet the <span style={{ color: 'var(--primary)' }}>Team</span>
+                        The Team Behind <span style={{ color: 'var(--primary)' }}>Astra</span>
                     </motion.h1>
                     <motion.p 
                         initial={{ opacity: 0 }}
@@ -267,12 +284,11 @@ const TeamPage = () => {
                         transition={{ duration: 0.5, delay: 0.15 }}
                         style={{ color: 'var(--text-muted)', fontSize: 'clamp(1rem, 2.5vw, 1.2rem)', maxWidth: '600px', margin: '0 auto', padding: '0 1rem' }}
                     >
-                        The passionate individuals crafting the ultimate Minecraft launch experience.
+                        The passionate team and contributors behind Astra Client throughout its development journey.
                     </motion.p>
                 </div>
             </section>
 
-            {/* Main Content Area - All members get massive detailed cards */}
             <section className="container">
                 {teamRoster.map((member, idx) => (
                     <DetailedStaffCard key={idx} data={member} reversed={idx % 2 !== 0} />
